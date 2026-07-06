@@ -271,7 +271,7 @@
 .scrollsec:nth-of-type(even) .scrollsec__grid {
   grid-template-columns: 1.1fr 1fr;
 }
-.scrollsec:nth-of-type(even) .scrollsec__gallery {
+.scrollsec:nth-of-type(odd) .scrollsec__gallery {
   order: -1;
 }
 

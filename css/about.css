@@ -50,10 +50,10 @@
 .values__card{ padding: 2.2rem 2rem; text-align: left; }
 .values__card .icon{
   width: 56px; height: 56px; border-radius: 16px; display: flex; align-items: center; justify-content: center;
-  margin-bottom: 1.3rem; background: var(--grad-blue); box-shadow: var(--shadow-blue);
+  color: black;
+  margin-bottom: 1.3rem;  box-shadow: var(--shadow-blue);
 }
-.values__card:nth-child(2) .icon{ background: var(--grad-gold); box-shadow: var(--shadow-gold); }
-.values__card:nth-child(3) .icon{ background: linear-gradient(135deg,#111827,#334155); }
+
 .values__card h3{ margin-bottom: .7rem; }
 
 @media (max-width: 860px){

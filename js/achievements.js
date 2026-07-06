@@ -31,118 +31,118 @@
       session: "2025–26",
       name: "Ananya Sharma",
       percentage: "98.4%",
-      img: " logo.png",
+      img: "demoprofile/pfp1.jpg",
     },
     {
       session: "2025–26",
       name: "Rohit Meena",
       percentage: "97.8%",
-      img: " logo.png",
+      img: "demoprofile/pfp2.jpg",
     },
     {
       session: "2025–26",
       name: "Priya Gupta",
       percentage: "97.2%",
-      img: " logo.png",
+      img: "demoprofile/pfp3.jpg",
     },
     {
       session: "2024–25",
       name: "Karan Yadav",
       percentage: "98.0%",
-      img: " logo.png",
+      img: "demoprofile/pfp4.jpg",
     },
     {
       session: "2024–25",
       name: "Simran Kaur",
       percentage: "97.6%",
-      img: " logo.png",
+      img: "demoprofile/pfp5.jpg",
     },
     {
       session: "2024–25",
       name: "Aditya Rathore",
       percentage: "96.9%",
-      img: " logo.png",
+      img: "demoprofile/pfp6.jpg",
     },
     {
       session: "2023–24",
       name: "Neha Choudhary",
       percentage: "97.4%",
-      img: " logo.png",
+      img: "demoprofile/pfp7.jpg",
     },
     {
       session: "2023–24",
       name: "Vikram Singh",
       percentage: "96.8%",
-      img: " logo.png",
+      img: "demoprofile/pfp8.jpg",
     },
   ];
 
   // Class XII toppers — grouped by stream: Science / Commerce / Arts
-  const TOPPERS_12 = [
-    {
-      session: "2025–26",
-      name: "Ishaan Verma",
-      percentage: "96.6%",
-      stream: "Science",
-      img: " logo.png",
-    },
-    {
-      session: "2025–26",
-      name: "Riya Agarwal",
-      percentage: "95.8%",
-      stream: "Commerce",
-      img: " logo.png",
-    },
-    {
-      session: "2025–26",
-      name: "Meera Joshi",
-      percentage: "94.9%",
-      stream: "Arts",
-      img: " logo.png",
-    },
-    {
-      session: "2024–25",
-      name: "Aryan Kapoor",
-      percentage: "97.1%",
-      stream: "Science",
-      img: " logo.png",
-    },
-    {
-      session: "2024–25",
-      name: "Tanya Bansal",
-      percentage: "95.4%",
-      stream: "Commerce",
-      img: " logo.png",
-    },
-    {
-      session: "2024–25",
-      name: "Devansh Rana",
-      percentage: "94.2%",
-      stream: "Arts",
-      img: " logo.png",
-    },
-    {
-      session: "2023–24",
-      name: "Kritika Solanki",
-      percentage: "96.3%",
-      stream: "Science",
-      img: " logo.png",
-    },
-    {
-      session: "2023–24",
-      name: "Nikhil Chauhan",
-      percentage: "94.7%",
-      stream: "Commerce",
-      img: " logo.png",
-    },
-    {
-      session: "2023–24",
-      name: "Sanya Malhotra",
-      percentage: "93.9%",
-      stream: "Arts",
-      img: " logo.png",
-    },
-  ];
+const TOPPERS_12 = [
+  {
+    session: "2025–26",
+    name: "Ishaan Verma",
+    percentage: "96.6%",
+    stream: "Science",
+    img: "demoprofile/pfp3.jpg",
+  },
+  {
+    session: "2025–26",
+    name: "Riya Agarwal",
+    percentage: "95.8%",
+    stream: "Commerce",
+    img: "demoprofile/pfp7.jpg",
+  },
+  {
+    session: "2025–26",
+    name: "Meera Joshi",
+    percentage: "94.9%",
+    stream: "Arts",
+    img: "demoprofile/pfp2.jpg",
+  },
+  {
+    session: "2024–25",
+    name: "Aryan Kapoor",
+    percentage: "97.1%",
+    stream: "Science",
+    img: "demoprofile/pfp8.jpg",
+  },
+  {
+    session: "2024–25",
+    name: "Tanya Bansal",
+    percentage: "95.4%",
+    stream: "Commerce",
+    img: "demoprofile/pfp1.jpg",
+  },
+  {
+    session: "2024–25",
+    name: "Devansh Rana",
+    percentage: "94.2%",
+    stream: "Arts",
+    img: "demoprofile/pfp5.jpg",
+  },
+  {
+    session: "2023–24",
+    name: "Kritika Solanki",
+    percentage: "96.3%",
+    stream: "Science",
+    img: "demoprofile/pfp4.jpg",
+  },
+  {
+    session: "2023–24",
+    name: "Nikhil Chauhan",
+    percentage: "94.7%",
+    stream: "Commerce",
+    img: "demoprofile/pfp6.jpg",
+  },
+  {
+    session: "2023–24",
+    name: "Sanya Malhotra",
+    percentage: "93.9%",
+    stream: "Arts",
+    img: "demoprofile/pfp2.jpg",
+  },
+];
 
   // Students' own achievements outside school — national/state level
   const STUDENT_ACHIEVEMENTS = [
@@ -152,7 +152,7 @@
       level: "National",
       title: "National Chess Championship — Runner-Up",
       desc: "Represented Rajasthan at the National School Chess Championship, finishing as runner-up in the under-16 category.",
-      img: " logo.png",
+      img: "demoprofile/pfp2.jpg",
     },
     {
       name: "Diya Patel",
@@ -160,7 +160,7 @@
       level: "State",
       title: "State-Level Painting Competition — Gold Medal",
       desc: "Won gold at the Rajasthan State Art Talent Search for an original painting on environmental conservation.",
-      img: " logo.png",
+      img: "demoprofile/pfp4.jpg",
     },
     {
       name: "Yash Rathi",
@@ -168,7 +168,7 @@
       level: "National",
       title: "National Mathematics Olympiad — Top 50",
       desc: "Ranked among the top 50 nationally in the National Mathematics Olympiad, out of over 40,000 participants.",
-      img: " logo.png",
+      img: "demoprofile/pfp6.jpg",
     },
     {
       name: "Anjali Soni",
@@ -176,7 +176,7 @@
       level: "State",
       title: "State Athletics Meet — 400m Gold",
       desc: "Won gold in the 400m sprint at the Rajasthan State School Athletics Meet, qualifying for national trials.",
-      img: " logo.png",
+      img: "demoprofile/pfp8.jpg",
     },
     {
       name: "Rehan Khan",
@@ -184,7 +184,7 @@
       level: "National",
       title: "National Robotics Challenge — Finalist",
       desc: "Reached the national finals of a robotics and coding challenge with a self-built line-following robot.",
-      img: " logo.png",
+      img: "demoprofile/pfp3.jpg",
     },
     {
       name: "Pooja Nair",
@@ -192,7 +192,7 @@
       level: "State",
       title: "State Classical Dance Competition — Gold",
       desc: "Awarded gold in Kathak at the Rajasthan State Inter-School Classical Dance Competition.",
-      img: " logo.png",
+      img: "demoprofile/pfp1.jpg",
     },
   ];
 

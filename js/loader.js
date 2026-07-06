@@ -1,20 +1,29 @@
-/* loader.js — handles the standard page loader with school name */
+/* loader.js */
 (function () {
-  const loader = document.querySelector('[data-loader]');
-  if (!loader) return;
 
-  function hideLoader() {
-    loader.classList.add('loader-hidden');
-    document.body.classList.remove('is-loading');
-    // remove from DOM after transition for accessibility / performance
-    window.setTimeout(() => loader.setAttribute('aria-hidden', 'true'), 700);
-  }
+    const loader = document.querySelector("[data-loader]");
+    if (!loader) return;
 
-  window.addEventListener('load', () => {
-    // small minimum display time so the loader doesn't just flash
-    window.setTimeout(hideLoader, 600);
-  });
+    let hidden = false;
 
-  // safety fallback in case 'load' is delayed by slow third-party assets
-  window.setTimeout(hideLoader, 4000);
+    function hideLoader() {
+
+        if (hidden) return;
+        hidden = true;
+
+        loader.classList.add("loader-hidden");
+        document.body.classList.remove("is-loading");
+
+        setTimeout(() => {
+            loader.remove();
+        }, 700);
+
+    }
+
+    window.addEventListener("load", () => {
+        setTimeout(hideLoader, 700);
+    });
+
+    setTimeout(hideLoader, 4000);
+
 })();

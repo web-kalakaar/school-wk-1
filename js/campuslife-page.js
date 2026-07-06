@@ -4,74 +4,74 @@
 (function () {
   /* ---------------------------------------------------------------------
      1. GALLERY DATA — one entry per section. Every image currently points
-        to the school logo as a placeholder; swap `src` values for real
+        to the school schoolgallery/campus.webpa placeholder; swap `src` values for real
         photography later without touching any markup.
   --------------------------------------------------------------------- */
   const GALLERY_DATA = {
     infrastructure: {
       title: "Infrastructure",
       images: [
-        { src: "logo.png", caption: "Main Academic Block" },
-        { src: "logo.png", caption: "Central Library" },
-        { src: "logo.png", caption: "Multipurpose Auditorium" },
-        { src: "logo.png", caption: "Reception & Admin Block" },
-        { src: "logo.png", caption: "Open Corridors & Courtyards" },
+        { src: "schoolgallery/campus.webp", caption: "Main Academic Block" },
+        { src: "schoolgallery/campus2.webp", caption: "Central Library" },
+        { src: "schoolgallery/campus3.webp", caption: "Multipurpose Auditorium" },
+        { src: "schoolgallery/campus2.webp", caption: "Reception & Admin Block" },
+        { src: "schoolgallery/campus4.webp", caption: "Open Corridors & Courtyards" },
       ],
     },
     classrooms: {
       title: "Modern Classrooms",
       images: [
-        { src: "logo.png", caption: "Smart Interactive Classrooms" },
-        { src: "logo.png", caption: "Activity & Discussion Rooms" },
-        { src: "logo.png", caption: "Primary Wing Learning Corner" },
-        { src: "logo.png", caption: "Senior Secondary Lecture Halls" },
+        { src: "schoolgallery/classroom1.jpg", caption: "Smart Interactive Classrooms" },
+        { src: "schoolgallery/classroom2.jpg", caption: "Activity & Discussion Rooms" },
+        { src: "schoolgallery/classroom3.jpg", caption: "Primary Wing Learning Corner" },
+        { src: "schoolgallery/classroom4.jpg", caption: "Senior Secondary Lecture Halls" },
       ],
     },
     labs: {
       title: "Laboratories",
       images: [
-        { src: "logo.png", caption: "Physics Laboratory" },
-        { src: "logo.png", caption: "Chemistry Laboratory" },
-        { src: "logo.png", caption: "Biology Laboratory" },
-        { src: "logo.png", caption: "Computer Science Lab" },
+        { src: "schoolgallery/science1.jpg", caption: "Physics Laboratory" },
+        { src: "schoolgallery/science2.jpg", caption: "Chemistry Laboratory" },
+        { src: "schoolgallery/science1.jpg", caption: "Biology Laboratory" },
+        { src: "schoolgallery/science2.jpg", caption: "Computer Science Lab" },
       ],
     },
     sports: {
       title: "Sports Facilities",
       images: [
-        { src: "logo.png", caption: "Basketball & Volleyball Courts" },
-        { src: "logo.png", caption: "Athletics Track & Field" },
-        { src: "logo.png", caption: "Indoor Games Room" },
-        { src: "logo.png", caption: "Yoga & Fitness Area" },
-        { src: "logo.png", caption: "Cricket & Football Ground" },
+        { src: "schoolgallery/sports.jpg", caption: "Basketball & Volleyball Courts" },
+        { src: "schoolgallery/sports2.jpg", caption: "Athletics Track & Field" },
+        { src: "schoolgallery/sports3.jpg", caption: "Indoor Games Room" },
+        { src: "schoolgallery/sports4.jpg", caption: "Yoga & Fitness Area" },
+        { src: "schoolgallery/sports3.jpg", caption: "Cricket & Football Ground" },
       ],
     },
     activities: {
       title: "Activities & Clubs",
       images: [
-        { src: "logo.png", caption: "Art & Craft Club" },
-        { src: "logo.png", caption: "Music & Instrument Practice" },
-        { src: "logo.png", caption: "Dance & Performance Club" },
-        { src: "logo.png", caption: "Debate & Elocution Society" },
+        { src: "schoolgallery/campus.webp", caption: "Art & Craft Club" },
+        { src: "schoolgallery/campus2.webp", caption: "Music & Instrument Practice" },
+        { src: "schoolgallery/campus3.webp", caption: "Dance & Performance Club" },
+        { src: "schoolgallery/campus4.webp", caption: "Debate & Elocution Society" },
       ],
     },
     events: {
       title: "Events & Celebrations",
       images: [
-        { src: "logo.png", caption: "Annual Day Celebration" },
-        { src: "logo.png", caption: "Independence Day Function" },
-        { src: "logo.png", caption: "Annual Sports Day" },
-        { src: "logo.png", caption: "Cultural Fest" },
-        { src: "logo.png", caption: "Festival Celebrations" },
+        { src: "schoolgallery/annual.jpg", caption: "Annual Day Celebration" },
+        { src: "schoolgallery/annual2.jpg", caption: "Independence Day Function" },
+        { src: "schoolgallery/annual3.jpg", caption: "Annual Sports Day" },
+        { src: "schoolgallery/annual4.jpg", caption: "Cultural Fest" },
+        { src: "schoolgallery/annual3.jpg", caption: "Festival Celebrations" },
       ],
     },
     trips: {
       title: "Educational Trips",
       images: [
-        { src: "logo.png", caption: "Historical Heritage Trip" },
-        { src: "logo.png", caption: "Science City Excursion" },
-        { src: "logo.png", caption: "Adventure & Nature Camp" },
-        { src: "logo.png", caption: "Industrial & Career Visit" },
+        { src: "schoolgallery/campus.webp", caption: "Historical Heritage Trip" },
+        { src: "schoolgallery/campus.webp", caption: "Science City Excursion" },
+        { src: "schoolgallery/campus.webp", caption: "Adventure & Nature Camp" },
+        { src: "schoolgallery/campus.webp", caption: "Industrial & Career Visit" },
       ],
     },
   };
@@ -163,7 +163,7 @@
   --------------------------------------------------------------------- */
   function updateActiveSlides() {
     const viewportH = window.innerHeight;
- if (window.matchMedia('(max-width: 680px)').matches) return;
+    if (window.matchMedia("(max-width: 680px)").matches) return;
     sections.forEach((section) => {
       const count = parseInt(section.dataset.slideCount, 10) || 1;
       if (count <= 1) return;
