@@ -1,0 +1,134 @@
+/* ==========================================================================
+   ACADEMICS PAGE STYLES — extends style.css + home.css shared foundations
+   ========================================================================== */
+
+/* ============================== CURRICULUM INFO ============================= */
+.curriculum{ background: #fff; }
+.curriculum__grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4rem; }
+
+.curriculum__card{ padding: 2rem 1.7rem; text-align: left; position: relative; overflow: hidden; }
+ 
+.curriculum__card > *{ position: relative; z-index: 1; }
+.curriculum__card .icon{
+  width: 50px; height: 50px; border-radius: 14px; background: var(--grad-blue); display: flex; align-items: center;
+  justify-content: center; margin-bottom: 1.1rem; box-shadow: var(--shadow-blue);
+}
+.curriculum__card:nth-child(2) .icon{ background: var(--grad-gold); box-shadow: var(--shadow-gold); }
+.curriculum__card:nth-child(3) .icon{ background: linear-gradient(135deg,#111827,#334155); }
+.curriculum__card:nth-child(4) .icon{ background: linear-gradient(135deg,#78350f,#B45309); }
+.curriculum__card h3{ font-size: 1.05rem; margin-bottom: .5rem; }
+.curriculum__card p{ font-size: .9rem; margin: 0; }
+
+@media (max-width: 992px){
+  .curriculum__grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px){
+  .curriculum__grid{ grid-template-columns: 1fr; }
+}
+
+ 
+
+/* ============================== WING SECTIONS ================================ */
+.wing{ background: #fff; scroll-margin-top: 150px; }
+.wing:nth-of-type(even){ background: linear-gradient(180deg,#FBFCFF 0%, #fff 100%); }
+
+.wing__top{ display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: center; margin-bottom: 3rem; }
+.wing__media{ position: relative; border-radius: var(--r-lg); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16/12; }
+.wing__media img{ width: 100%; height: 100%; object-fit: cover; }
+.wing__media-tag{
+  position: absolute; top: 1.2rem; left: 1.2rem; background: rgba(15,23,42,.75); backdrop-filter: blur(6px);
+  color: #fff; font-family: var(--font-display); font-weight: 700; font-size: .8rem; letter-spacing: .06em;
+  text-transform: uppercase; padding: .55rem 1rem; border-radius: var(--r-pill);
+}
+
+.wing__intro .eyebrow{ margin-bottom: .9rem; }
+.wing__intro p.lead{ font-size: 1.02rem; color: var(--color-text-soft); margin: 1rem 0 1.6rem; }
+
+.wing__focus{
+  display: flex; align-items: flex-start; gap: .9rem; background: var(--color-blue-tint);
+  border-radius: var(--r-md); padding: 1.2rem 1.4rem;
+}
+.wing__focus .icon{
+  flex-shrink: 0; width: 42px; height: 42px; border-radius: 12px; background: var(--grad-blue);
+  display: flex; align-items: center; justify-content: center;
+}
+.wing__focus h4{ font-size: .95rem; margin-bottom: .3rem; }
+.wing__focus p{ font-size: .88rem; margin: 0; }
+
+/* Alternate media/intro side */
+.wing:nth-of-type(even) .wing__top .wing__media{ order: 2; }
+.wing:nth-of-type(even) .wing__top .wing__intro{ order: 1; }
+
+/* ---- Details panel: features + subjects, with CSS-only show more/less ---- */
+.wing__details{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+
+.wing__panel{ padding: 1.8rem; }
+.wing__panel h3{ font-size: 1.1rem; margin-bottom: 1.1rem; display: flex; align-items: center; gap: .6rem; }
+.wing__panel h3 .dot{ width: 9px; height: 9px; border-radius: 50%; background: var(--color-gold); flex-shrink: 0; }
+
+.wing__feature-list, .wing__subject-list{ display: flex; flex-direction: column; gap: .8rem; }
+.wing__feature-list li{ display: flex; align-items: flex-start; gap: .7rem; font-size: .92rem; color: var(--color-text); }
+.wing__feature-list li::before{
+  content: '✓'; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--grad-gold);
+  color: var(--color-primary); font-size: .72rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
+  margin-top: .1rem;
+}
+
+.wing__subject-list{ flex-direction: row; flex-wrap: wrap; gap: .6rem; }
+.wing__subject-list li{
+  background: var(--color-blue-tint); color: var(--color-blue); font-size: .82rem; font-weight: 600;
+  padding: .5rem .95rem; border-radius: var(--r-pill);
+}
+
+/* Extra content revealed by the toggle */
+.wing__extra{
+  max-height: 0; opacity: 0; overflow: hidden;
+  transition: max-height .6s var(--ease-soft), opacity .5s var(--ease-soft), margin .6s var(--ease-soft);
+  margin-top: 0;
+}
+
+/* Toggle checkbox hack — no JS required */
+.wing__toggle-checkbox{ position: absolute; opacity: 0; pointer-events: none; }
+.wing__toggle-checkbox:checked ~ .wing__extra{
+  max-height: 900px; opacity: 1; margin-top: .8rem;
+}
+
+.wing__toggle-label{
+  display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.3rem; cursor: pointer;
+  font-family: var(--font-display); font-weight: 600; font-size: .88rem; color: var(--color-blue);
+  user-select: none;
+}
+.wing__toggle-label .chev{
+  width: 9px; height: 9px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor;
+  transform: rotate(45deg); transition: transform .35s var(--ease-soft);
+}
+.wing__toggle-checkbox:checked ~ .wing__toggle-label .chev{ transform: rotate(225deg); }
+.wing__toggle-label .txt-more::after{ content: 'Show More'; }
+.wing__toggle-label .txt-less::after{ content: 'Show Less'; }
+.wing__toggle-label .txt-more{ display: inline; }
+.wing__toggle-label .txt-less{ display: none; }
+.wing__toggle-checkbox:checked ~ .wing__toggle-label .txt-more{ display: none; }
+.wing__toggle-checkbox:checked ~ .wing__toggle-label .txt-less{ display: inline; }
+.wing__toggle-label:hover{ color: var(--color-gold-dark); }
+
+.wing__extra-block{ margin-bottom: 1.1rem; }
+.wing__extra-block:last-child{ margin-bottom: 0; }
+.wing__extra-block h5{ font-family: var(--font-display); font-size: .88rem; font-weight: 700; color: var(--color-primary); margin-bottom: .6rem; }
+
+/* ---------------------------------------------------------------------------- */
+
+@media (max-width: 992px){
+  .wing__top{ grid-template-columns: 1fr; gap: 2rem; }
+  .wing:nth-of-type(even) .wing__top .wing__media,
+  .wing:nth-of-type(even) .wing__top .wing__intro{ order: initial; }
+  .wing__details{ grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px){
+  .wing__panel{ padding: 1.4rem; }
+  .wing__focus{ flex-direction: column; }
+  .wing-nav{ top: 0; }
+}
+
+/* ============================== SECTION DIVIDER SPACING ====================== */
+.wing + .wing{ border-top: 1px solid var(--color-border); }

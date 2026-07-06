@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Life | Radhe Krishna Senior Secondary School | RBSE Affiliated</title>
+  <meta name="description"
+    content="Explore campus life at Radhe Krishna Senior Secondary School — infrastructure, modern classrooms, labs, sports, activities, events and educational trips.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/campuslife.css">
+</head>
+
+<body class="is-loading">
+
+  <!-- ============================== LOADER ============================== -->
+  <div class="loader" data-loader aria-hidden="false">
+    <div class="loader__mark">Radhe<span>Krishna</span></div>
+    <div class="loader__bar"></div>
+    <p class="loader__caption">Senior Secondary School</p>
+  </div>
+
+  <!-- ============================== NAVBAR ============================== -->
+  <header class="navbar" data-navbar>
+    <div class="container navbar__inner">
+      <a href="index.html" class="navbar__brand">
+        <div class="navbar__logo"><img src="logo.png" alt=""></div>
+        <div class="navbar__title">Radhe Krishna <small>Senior Secondary School</small></div>
+      </a>
+
+      <nav aria-label="Primary">
+        <ul class="navbar__menu">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li>
+            <a href="about.html" class="navbar__link">About <span class="chev"></span></a>
+            <div class="navbar__dropdown">
+              <a href="about.html#story">Our Story</a>
+              <a href="about.html#values">Vision &amp; Mission</a>
+              <a href="about.html#leaders">Principal's message</a>
+              <a href="about.html#leaders">Director's message</a>
+
+              <a href="about.html#why">Why Choose Us</a>
+            </div>
+          </li>
+          <li>
+            <a href="academics.html" class="navbar__link">Academics <span class="chev"></span></a>
+            <div class="navbar__dropdown">
+              <a href="academics.html#curriculum">Curriculum</a>
+              <a href="academics.html#primary">Primary Wing</a>
+              <a href="academics.html#middle">Middle Wing</a>
+              <a href="academics.html#secondary">Secondary Wing</a>
+              <a href="academics.html#senior-secondary">Senior Secondary</a>
+            </div>
+          </li>
+
+          <li>
+            <a href="campuslife.html" class="navbar__link">Campus Life <span class="chev"></span></a>
+            <div class="navbar__dropdown">
+              <a href="campuslife.html#infrastructure">Infrastructure</a>
+              <a href="campuslife.html#classrooms">Classrooms</a>
+              <a href="campuslife.html#labs">Labs</a>
+              <a href="campuslife.html#sports">Sports</a>
+              <a href="campuslife.html#activities">Activities</a>
+              <a href="campuslife.html#events">Events & Celebration</a>
+              <a href="campuslife.html#trips">Educational Trips</a>
+
+            </div>
+          </li>
+
+          <li>
+            <a href="achievements.html" class="navbar__link">Achievements <span class="chev"></span></a>
+            <div class="navbar__dropdown">
+              <a href="achievements.html#awards">Awards & Recognitions</a>
+              <a href="achievements.html#academic-toppers">Academic Toppers</a>
+              <a href="achievements.html#student-achievements">Other Achievements</a>
+
+
+            </div>
+          </li>
+          <li>
+            <a href="admission.html" class="navbar__link">Admission <span class="chev"></span></a>
+            <div class="navbar__dropdown">
+              <a href="admission.html#adm-process">Admission Process</a>
+              <a href="admission.html#fees">Fee Structure</a>
+              <a href="admission.html#eligibility">Eligibility</a>
+              <a href="admission.html#eligibility">Documents Required</a>
+              <a href="admission.html#admission-form">Apply Now</a>
+
+
+            </div>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="navbar__actions">
+        <a href="#contact" class="btn btn-primary">Contact Us</a>
+        <button class="hamburger" data-hamburger aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile nav -->
+  <div class="mobile-overlay" data-mobile-overlay></div>
+  <nav class="mobile-nav" data-mobile-nav aria-label="Mobile">
+    <ul>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <!-- About -->
+      <li>
+        <a href="about.html" data-mobile-toggle>
+          About <span class="chev"></span>
+        </a>
+        <div class="mobile-nav__sub">
+          <a href="about.html#story">Our Story</a>
+          <a href="about.html#values">Vision &amp; Mission</a>
+          <a href="about.html#leaders">Principal's Message</a>
+          <a href="about.html#leaders">Director's Message</a>
+          <a href="about.html#why">Why Choose Us</a>
+        </div>
+      </li>
+
+      <!-- Academics -->
+      <li>
+        <a href="academics.html" data-mobile-toggle>
+          Academics <span class="chev"></span>
+        </a>
+        <div class="mobile-nav__sub">
+          <a href="academics.html#curriculum">Curriculum</a>
+          <a href="academics.html#primary">Primary Wing</a>
+          <a href="academics.html#middle">Middle Wing</a>
+          <a href="academics.html#secondary">Secondary Wing</a>
+          <a href="academics.html#senior-secondary">Senior Secondary</a>
+        </div>
+      </li>
+
+      <!-- Campus Life -->
+      <li>
+        <a href="campuslife.html" data-mobile-toggle>
+          Campus Life <span class="chev"></span>
+        </a>
+        <div class="mobile-nav__sub">
+          <a href="campuslife.html#infrastructure">Infrastructure</a>
+          <a href="campuslife.html#classrooms">Classrooms</a>
+          <a href="campuslife.html#labs">Labs</a>
+          <a href="campuslife.html#sports">Sports</a>
+          <a href="campuslife.html#activities">Activities</a>
+          <a href="campuslife.html#events">Events &amp; Celebrations</a>
+          <a href="campuslife.html#trips">Educational Trips</a>
+        </div>
+      </li>
+
+      <!-- Achievements -->
+      <li>
+        <a href="achievements.html" data-mobile-toggle>
+          Achievements <span class="chev"></span>
+        </a>
+        <div class="mobile-nav__sub">
+          <a href="achievements.html#awards">Awards &amp; Recognitions</a>
+          <a href="achievements.html#academic-toppers">Academic Toppers</a>
+          <a href="achievements.html#student-achievements">Other Achievements</a>
+        </div>
+      </li>
+
+      <!-- Admission -->
+      <li>
+        <a href="admission.html" data-mobile-toggle>
+          Admission <span class="chev"></span>
+        </a>
+        <div class="mobile-nav__sub">
+          <a href="admission.html#adm-process">Admission Process</a>
+          <a href="admission.html#fees">Fee Structure</a>
+          <a href="admission.html#eligibility">Eligibility</a>
+          <a href="admission.html#eligibility">Documents Required</a>
+          <a href="admission.html#admission-form">Apply Now</a>
+        </div>
+      </li>
+
+    </ul>
+
+    <a href="#contact" class="btn btn-primary">Contact Us</a>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============================== PAGE BANNER (HERO) ============================== -->
+    <section class="page-banner">
+      <div class="page-banner__shape page-banner__shape--1"></div>
+      <div class="page-banner__shape page-banner__shape--2"></div>
+      <div class="container page-banner__inner">
+        <span class="eyebrow">Life On Campus</span>
+        <h1>Campus Life at Radhe Krishna</h1>
+        <p>Scroll through our infrastructure, classrooms, labs, sports facilities, activities, events and educational
+          trips — a complete picture of everyday life on campus.</p>
+        <div class="breadcrumb"><a href="index.html">Home</a> / <span>Campus Life</span></div>
+      </div>
+    </section>
+
+
+
+    <!-- ============================== 1. INFRASTRUCTURE ============================== -->
+    <section class="scrollsec" id="infrastructure" data-scrollsec="infrastructure">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">01 / 07</span>
+            <h2>World-class infrastructure built for learning</h2>
+            <p class="lead">Our campus is designed to feel spacious, safe and inspiring — from the main academic block
+              to quiet reading corners, every space serves a purpose in a student's day.</p>
+            <ul class="scrollsec__points">
+              <li>Spread across a secure, well-planned campus</li>
+              <li>Central library with thousands of titles and reading zones</li>
+              <li>Multipurpose auditorium for assemblies and events</li>
+              <li>CCTV-monitored corridors and entry points throughout</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 2. MODERN CLASSROOMS ============================== -->
+    <section class="scrollsec" id="classrooms" data-scrollsec="classrooms">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">02 / 07</span>
+            <h2>Modern classrooms that keep students engaged</h2>
+            <p class="lead">Every classroom is equipped with interactive smart boards and flexible seating, helping
+              teachers bring lessons to life for every learning style.</p>
+            <ul class="scrollsec__points">
+              <li>Interactive smart boards in every classroom</li>
+              <li>Bright, well-ventilated spaces with natural light</li>
+              <li>Flexible seating for group and activity-based learning</li>
+              <li>Dedicated activity rooms for hands-on projects</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 3. LABS ============================== -->
+    <section class="scrollsec" id="labs" data-scrollsec="labs">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">03 / 07</span>
+            <h2>Fully equipped labs for hands-on science</h2>
+            <p class="lead">Theory comes alive in our physics, chemistry, biology and computer labs — spaces where
+              students test ideas, run experiments and build real technical skills.</p>
+            <ul class="scrollsec__points">
+              <li>Dedicated Physics, Chemistry and Biology laboratories</li>
+              <li>Computer lab with updated systems and internet access</li>
+              <li>Supervised, safety-first practical sessions every week</li>
+              <li>Equipment aligned with the RBSE practical curriculum</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 4. SPORTS ============================== -->
+    <section class="scrollsec" id="sports" data-scrollsec="sports">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">04 / 07</span>
+            <h2>Sports facilities that build fitness and teamwork</h2>
+            <p class="lead">From daily physical education to inter-house tournaments, our sports program helps students
+              build discipline, resilience and lifelong healthy habits.</p>
+            <ul class="scrollsec__points">
+              <li>Basketball, volleyball and cricket facilities on campus</li>
+              <li>Dedicated athletics track for annual sports day</li>
+              <li>Indoor games room for table tennis and chess</li>
+              <li>Daily yoga and fitness sessions for all age groups</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 5. ACTIVITIES ============================== -->
+    <section class="scrollsec" id="activities" data-scrollsec="activities">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">05 / 07</span>
+            <h2>Activities and clubs beyond the classroom</h2>
+            <p class="lead">We believe every student has a talent waiting to be discovered — our clubs give them the
+              space and mentorship to explore art, music, dance and public speaking.</p>
+            <ul class="scrollsec__points">
+              <li>Art &amp; craft club with regular exhibitions</li>
+              <li>Music and instrument practice sessions</li>
+              <li>Dance and performance training for school events</li>
+              <li>Debate and elocution society for public speaking skills</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 6. EVENTS & CELEBRATIONS ============================== -->
+    <section class="scrollsec" id="events" data-scrollsec="events">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">06 / 07</span>
+            <h2>Events and celebrations throughout the year</h2>
+            <p class="lead">From the Annual Day to festival celebrations, our school calendar is full of moments that
+              bring students, teachers and parents together.</p>
+            <ul class="scrollsec__points">
+              <li>Annual Day with performances from every wing</li>
+              <li>Independence Day and Republic Day functions</li>
+              <li>Annual sports day and inter-house competitions</li>
+              <li>Festival celebrations promoting cultural awareness</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 7. EDUCATIONAL TRIPS ============================== -->
+    <section class="scrollsec" id="trips" data-scrollsec="trips">
+      <div class="scrollsec__sticky">
+        <div class="container scrollsec__grid">
+          <div class="scrollsec__info" data-reveal="left">
+            <span class="scrollsec__index">07 / 07</span>
+            <h2>Educational trips that extend learning beyond books</h2>
+            <p class="lead">Carefully planned excursions connect classroom learning to the real world, from heritage
+              sites to science exhibitions and industrial visits.</p>
+            <ul class="scrollsec__points">
+              <li>Historical and heritage site excursions</li>
+              <li>Science city and exhibition visits</li>
+              <li>Adventure and nature camps for team-building</li>
+              <li>Industrial and career-oriented field visits</li>
+            </ul>
+            <div class="scrollsec__progress" data-progress></div>
+          </div>
+          <div class="scrollsec__gallery" data-gallery></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== ADMISSION CTA ============================== -->
+    <section class="admission" id="admission">
+      <div class="admission__shape admission__shape--1"></div>
+      <div class="admission__shape admission__shape--2"></div>
+      <div class="container admission__inner" data-reveal="scale">
+        <span class="eyebrow" style="background:rgba(255,255,255,.12); color:#FBBF24;">Admissions 2026–27</span>
+        <h2>Admission Open for the New Session</h2>
+        <p class="lead">Limited seats available across Nursery to Class XI. Begin your child's journey with a school
+          that puts learning and character first.</p>
+
+        <ul class="admission__checklist">
+          <li>RBSE Affiliated</li>
+          <li>Transport Facility</li>
+          <li>Smart Classrooms</li>
+          <li>Experienced Faculty</li>
+          <li>Safe Campus</li>
+        </ul>
+
+        <div class="admission__cta">
+          <a href="#contact" class="btn btn-outline">Contact Us </a>
+          <a href="#contact" class="btn btn-primary">Apply Now ➜</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== CONTACT ============================== -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-head center" data-reveal="up">
+          <span class="eyebrow">Get In Touch</span>
+          <h2>We'd love to hear from you</h2>
+          <p>Have a question about admissions or academics? Reach out — our team responds within one working day.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact-card card" data-reveal="up">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 21s-7-6.2-7-11.2A7 7 0 0112 3a7 7 0 017 6.8C19 14.8 12 21 12 21z" stroke="#0F172A"
+                  stroke-width="1.8" />
+                <circle cx="12" cy="10" r="2.4" stroke="#0F172A" stroke-width="1.8" />
+              </svg></div>
+            <h4>Visit Our Campus</h4>
+            <p>Radhe Krishna Senior Secondary School, NH-21, Near Kumher Road, Bharatpur, Rajasthan – 321001</p>
+          </div>
+          <div class="contact-card card" data-reveal="up" style="--i:1">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M4 5h3l2 5-2 1a12 12 0 006 6l1-2 5 2v3a2 2 0 01-2 2A16 16 0 014 7a2 2 0 010-2z"
+                  fill="#0F172A" />
+              </svg></div>
+            <h4>Call Us</h4>
+            <p>+91 94140 00000<br>+91 78900 11122</p>
+          </div>
+          <div class="contact-card card" data-reveal="up" style="--i:2">
+            <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="5" width="18" height="14" rx="2" stroke="#0F172A" stroke-width="1.8" />
+                <path d="M4 6l8 7 8-7" stroke="#0F172A" stroke-width="1.8" />
+              </svg></div>
+            <h4>Email Us</h4>
+            <p>info@radhekrishnaschool.edu.in<br>admissions@radhekrishnaschool.edu.in</p>
+          </div>
+        </div>
+
+        <div class="contact__lower" data-reveal="up">
+          <div class="contact__social">
+            <p>Follow Our School</p>
+            <div class="contact__social-icons">
+              <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M14 9h3V6h-3c-2 0-3.5 1.5-3.5 3.5V12H8v3h2.5v6h3v-6H16l.5-3h-3V9.8c0-.5.2-.8.8-.8z"
+                    fill="#2563EB" />
+                </svg></a>
+              <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="5" stroke="#2563EB" stroke-width="1.8" />
+                  <circle cx="12" cy="12" r="4" stroke="#2563EB" stroke-width="1.8" />
+                  <circle cx="17.2" cy="6.8" r="1.1" fill="#2563EB" />
+                </svg></a>
+              <a href="#" aria-label="YouTube"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <rect x="2.5" y="6" width="19" height="12" rx="3" stroke="#2563EB" stroke-width="1.8" />
+                  <path d="M10.5 9.5l5 2.5-5 2.5z" fill="#2563EB" />
+                </svg></a>
+              <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <rect x="3" y="3" width="18" height="18" rx="3" stroke="#2563EB" stroke-width="1.8" />
+                  <circle cx="8" cy="8.5" r="1.2" fill="#2563EB" />
+                  <path d="M8 11v6M12 11v6M12 13.5c0-1.6 4-1.6 4 0V17" stroke="#2563EB" stroke-width="1.6" />
+                </svg></a>
+            </div>
+          </div>
+          <div class="contact__map">
+            <iframe src="https://www.google.com/maps?q=Bharatpur,Rajasthan&output=embed" title="School location map"
+              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <div class="navbar__logo"><img src="logo.png" alt=""></div>
+        <h5 style="margin-top:1rem;">Radhe Krishna Senior Secondary School</h5>
+        <p>An RBSE affiliated institution committed to academic excellence, modern infrastructure and holistic student
+          growth.</p>
+      </div>
+
+      <div>
+  <h5>Quick Links</h5>
+  <ul>
+    <li><a href="about.html">About Us</a></li>
+    <li><a href="campuslife.html">Campus Life</a></li>
+    <li><a href="achievements.html">Achievements</a></li>
+    <li><a href="admission.html">Admission</a></li>
+    <li><a href="#contact">Contact Us</a></li>
+  </ul>
+</div>
+
+<div>
+  <h5>Academics</h5>
+  <ul>
+    <li><a href="academics.html#primary">Primary Wing</a></li>
+    <li><a href="academics.html#middle">Middle Wing</a></li>
+    <li><a href="academics.html#secondary">Secondary Wing</a></li>
+    <li><a href="academics.html#senior-secondary">Senior Secondary</a></li>
+    <li><a href="academics.html#curriculum">Curriculum</a></li>
+  </ul>
+</div>
+
+<div>
+  <h5>Admissions</h5>
+  <ul>
+    <li><a href="admission.html#adm-process">Admission Process</a></li>
+    <li><a href="admission.html#eligibility">Eligibility</a></li>
+    <li><a href="admission.html#fees">Fee Structure</a></li>
+    <li><a href="admission.html#admission-form">Apply Now</a></li>
+    <li><a href="#contact">Contact Admissions</a></li>
+  </ul>
+</div>
+    </div>
+
+    <div class="container footer__bottom">
+      <p>© <span data-year>2026</span> Radhe Krishna Senior Secondary School. All rights reserved.</p>
+      <div class="legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+  <button class="back-to-top" data-back-to-top aria-label="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+      <path d="M12 19V5M5 12l7-7 7 7" stroke="#0F172A" stroke-width="2.2" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script src="js/loader.js"></script>
+  <script src="js/navbar.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/backtotop.js"></script>
+  <script src="js/campuslife-page.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

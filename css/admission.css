@@ -1,0 +1,345 @@
+/* ==========================================================================
+   ADMISSION PAGE STYLES — extends style.css + home.css shared foundations
+   ========================================================================== */
+
+/* ============================== HERO ============================== */
+.adm-hero{
+  position: relative; padding: 9.5rem 0 6rem; overflow: hidden; text-align: center; color: #fff;
+  background: linear-gradient(120deg, rgba(15,23,42,.93), rgba(29,58,138,.88)), url('../schoolgallery/campus2.webp');
+  background-size: cover; background-position: center;
+}
+.adm-hero__shape{ position: absolute; border-radius: 50%; opacity: .5; z-index: 0; }
+.adm-hero__shape--1{ width: 260px; height: 260px; background: radial-gradient(circle, rgba(251,191,36,.35), transparent 70%); top: -70px; left: -50px; animation: admFloat 7s ease-in-out infinite; }
+.adm-hero__shape--2{ width: 320px; height: 320px; background: radial-gradient(circle, rgba(37,99,235,.4), transparent 70%); bottom: -110px; right: -70px; animation: admFloat 9s ease-in-out infinite reverse; }
+@keyframes admFloat{ 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-22px);} }
+
+.adm-hero__inner{ position: relative; z-index: 2; }
+.adm-hero .eyebrow{ background: rgba(255,255,255,.12); color: var(--color-gold); }
+.adm-hero .eyebrow::before{ background: var(--color-gold); }
+.adm-hero h1{ color: #fff; margin-bottom: .9rem; font-size: clamp(2.1rem, 4vw, 3.2rem); }
+.adm-hero p.lead{ color: rgba(255,255,255,.82); max-width: 600px; margin: 0 auto; }
+.adm-hero .breadcrumb{ display: inline-flex; align-items: center; gap: .5rem; margin-top: 1.6rem; font-size: .85rem; font-weight: 600; color: rgba(255,255,255,.65); }
+.adm-hero .breadcrumb a{ color: rgba(255,255,255,.9); }
+.adm-hero .breadcrumb a:hover{ color: var(--color-gold); }
+.adm-hero .breadcrumb span{ color: var(--color-gold); }
+
+.adm-hero__cta{ display: flex; justify-content: center; gap: 1.1rem; flex-wrap: wrap; margin-top: 2.2rem; }
+
+.adm-hero__badges{
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .9rem; margin-top: 2.4rem;
+}
+.adm-hero__badges li{
+  display: flex; align-items: center; gap: .55rem; background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(8px);
+  padding: .6rem 1.1rem; border-radius: var(--r-pill); font-size: .84rem; font-weight: 600;
+}
+.adm-hero__badges li::before{ content: '✓'; color: var(--color-gold); font-weight: 800; }
+
+/* ============================== ADMISSION PROCESS ============================= */
+.adm-process{ background: #fff; }
+.adm-process__steps{
+  display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.2rem; position: relative;
+}
+.adm-process__steps::before{
+  content: ''; position: absolute; top: 60px; left: 10%; right: 10%; height: 2px;
+  background: repeating-linear-gradient(90deg, var(--color-border) 0 10px, transparent 10px 18px); z-index: 0;
+}
+.adm-step{ position: relative; z-index: 1; text-align: center; padding: 1.6rem 1.1rem; }
+.adm-step__num{
+  width: 68px; height: 68px; margin: 0 auto 1.2rem; border-radius: 50%; background: var(--grad-blue);
+  color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 1.4rem;
+  display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-blue);
+  border: 5px solid #fff;
+}
+/* ==============================
+   ADMISSION STEPS - TIRANGA
+================================= */
+
+.adm-step:nth-child(1) .adm-step__num{
+  background: #FF9933;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255,153,51,.35);
+}
+
+.adm-step:nth-child(2) .adm-step__num{
+  background: #138808;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(19,136,8,.35);
+}
+
+.adm-step:nth-child(3) .adm-step__num{
+  background: #fff;
+  color: #000080;
+  border: 2px solid #D1D5DB;
+  box-shadow: 0 10px 24px rgba(15,23,42,.12);
+}
+
+.adm-step:nth-child(4) .adm-step__num{
+  background: #138808;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(19,136,8,.35);
+}
+
+.adm-step:nth-child(5) .adm-step__num{
+  background: #FF9933;
+  color: #fff;
+  box-shadow: 0 10px 24px rgba(255,153,51,.35);
+}
+.adm-step h3{ font-size: 1rem; margin-bottom: .5rem; }
+.adm-step p{ font-size: .85rem; margin: 0; }
+
+@media (max-width: 992px){
+  .adm-process__steps{ grid-template-columns: repeat(2, 1fr); }
+  .adm-process__steps::before{ display: none; }
+}
+@media (max-width: 560px){
+  .adm-process__steps{ grid-template-columns: 1fr; }
+}
+
+/* ============================== FEE STRUCTURE ================================= */
+.fees{ background: linear-gradient(180deg,#FBFCFF 0%, #fff 100%); }
+
+.fees__tabs{ display: flex; justify-content: center; flex-wrap: wrap; gap: .7rem; margin-bottom: 2.4rem; }
+.fees__tabs button{
+  padding: .75rem 1.5rem; border-radius: var(--r-pill); background: #fff; border: 1px solid var(--color-border);
+  font-family: var(--font-display); font-weight: 600; font-size: .9rem; color: var(--color-primary);
+  transition: all .3s var(--ease);
+}
+.fees__tabs button.is-active, .fees__tabs button:hover{ background: var(--color-primary); color: #fff; border-color: var(--color-primary); }
+
+.fees__panel{ display: none; }
+.fees__panel.is-active{ display: block; animation: feesFade .5s var(--ease-soft); }
+@keyframes feesFade{ from{ opacity: 0; transform: translateY(10px);} to{ opacity: 1; transform: none; } }
+
+.fees__table-wrap{ overflow-x: auto; border-radius: var(--r-lg); box-shadow: var(--shadow-sm); border: 1px solid var(--color-border); }
+.fees__table{ width: 100%; border-collapse: collapse;  background: #fff; }
+.fees__table thead th{
+  background: var(--grad-blue); color: #fff; font-family: var(--font-display); font-weight: 600; font-size: .88rem;
+  text-align: left; padding: 1.1rem 1.4rem;
+}
+.fees__table thead th:last-child{ text-align: right; }
+.fees__table tbody td{ padding: 1rem 1.4rem; font-size: .92rem; color: var(--color-text); border-top: 1px solid var(--color-border); }
+.fees__table tbody td:last-child{ text-align: right; font-family: var(--font-display); font-weight: 700; color: var(--color-blue); }
+.fees__table tbody tr:hover{ background: var(--color-blue-tint); }
+.fees__table tfoot td{ padding: 1.1rem 1.4rem; font-family: var(--font-display); font-weight: 800; border-top: 2px solid var(--color-primary); }
+.fees__table tfoot td:last-child{ text-align: right; color: var(--color-primary); font-size: 1.05rem; }
+
+.fees__note{ margin-top: 1.2rem; font-size: .86rem; color: var(--color-text-soft); text-align: center; }
+
+@media (max-width: 620px){
+  .fees__tabs{ gap: .5rem; }
+  .fees__tabs button{ padding: .6rem 1.1rem; font-size: .82rem; }
+}
+/* ===========================
+   TABLET
+=========================== */
+@media (max-width: 992px){
+
+  .fees__table thead th,
+  .fees__table tbody td,
+  .fees__table tfoot td{
+    padding: .9rem 1rem;
+  }
+
+  .fees__table thead th{
+    font-size: .84rem;
+  }
+
+  .fees__table tbody td{
+    font-size: .9rem;
+  }
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+@media (max-width:768px){
+
+  .fees__tabs{
+    gap:.6rem;
+  }
+
+  .fees__tabs button{
+    flex:1 1 calc(50% - .6rem);
+    min-width:140px;
+    padding:.75rem 1rem;
+    font-size:.85rem;
+  }
+
+  .fees__table-wrap{
+    overflow:visible;
+    border:none;
+    box-shadow:none;
+    background:none;
+  }
+
+  .fees__table{
+    display:block;
+  }
+
+  .fees__table thead{
+    display:none;
+  }
+
+  .fees__table tbody,
+  .fees__table tr,
+  .fees__table td,
+  .fees__table tfoot,
+  .fees__table tfoot tr{
+    display:block;
+    width:100%;
+  }
+
+  .fees__table tbody tr{
+    background:#fff;
+    border:1px solid var(--color-border);
+    border-radius:16px;
+    margin-bottom:1rem;
+    overflow:hidden;
+    box-shadow:var(--shadow-sm);
+  }
+
+  .fees__table tbody td{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:1rem;
+    padding:1rem 1.2rem;
+    border:none;
+  }
+
+  .fees__table tbody td:first-child{
+    font-weight:600;
+    color:var(--color-primary);
+  }
+
+  .fees__table tbody td:last-child{
+    color:var(--color-blue);
+    font-weight:700;
+    text-align:right;
+  }
+
+  .fees__table tbody td+td{
+    border-top:1px solid var(--color-border);
+  }
+
+  .fees__table tfoot{
+    margin-top:1rem;
+    background:#fff;
+    border-radius:16px;
+    overflow:hidden;
+    border:2px solid var(--color-primary);
+    box-shadow:var(--shadow-sm);
+  }
+
+  .fees__table tfoot td{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:1rem 1.2rem;
+    border:none;
+  }
+
+  .fees__note{
+    font-size:.82rem;
+    line-height:1.6;
+  }
+
+}
+
+/* ===========================
+   SMALL PHONES
+=========================== */
+@media (max-width:480px){
+
+  .fees__tabs button{
+    flex:1 1 100%;
+  }
+
+  .fees__table tbody td,
+  .fees__table tfoot td{
+    padding:.9rem 1rem;
+    font-size:.88rem;
+  }
+
+}
+/* ============================== ELIGIBILITY & REQUIREMENTS ==================== */
+.eligibility{ background: #fff; }
+.eligibility__grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+
+.elig-card{ padding: 2rem; }
+.elig-card h3{ font-size: 1.1rem; margin-bottom: 2rem; display: flex; align-items: center; gap: .7rem; }
+.elig-card h3 .icon{
+  width: 40px; height: 40px; border-radius: 12px; background: var(--grad-blue); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.elig-card:nth-child(2) h3 .icon{ background: var(--grad-gold); }
+.elig-card ul{ display: flex; flex-direction: column; gap: .8rem; }
+.elig-card li{ display: flex; align-items: flex-start; gap: .7rem; font-size: .92rem; color: var(--color-text); }
+.elig-card li::before{
+  content: '✓'; flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--grad-gold);
+  color: var(--color-primary); font-size: .72rem; font-weight: 800; display: flex; align-items: center; justify-content: center;
+  margin-top: .1rem;
+}
+
+@media (max-width: 860px){
+  .eligibility__grid{ grid-template-columns: 1fr; }
+
+}
+
+/* ============================== ADMISSION FORM ================================= */
+.adm-form-section{ background: linear-gradient(180deg,#FBFCFF 0%, #fff 100%); }
+.adm-form-wrap{ max-width: 880px; margin: 0 auto; background: #fff; border-radius: var(--r-lg); box-shadow: var(--shadow-lg); padding: 2.6rem; border: 1px solid var(--color-border); }
+
+.adm-form__grid{ display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; }
+.adm-form__field{ display: flex; flex-direction: column; gap: .5rem; }
+.adm-form__field.full{ grid-column: 1 / -1; }
+.adm-form__field label{ font-family: var(--font-display); font-weight: 600; font-size: .86rem; color: var(--color-primary); }
+.adm-form__field label .req{ color: var(--color-gold-dark); }
+
+.adm-form__field input,
+.adm-form__field select,
+.adm-form__field textarea{
+  padding: .9rem 1.1rem; border-radius: var(--r-sm); border: 1.5px solid var(--color-border);
+  background: #fff; font-size: .92rem; color: var(--color-text); transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+  font-family: var(--font-body); width: 100%;
+}
+.adm-form__field input:focus,
+.adm-form__field select:focus,
+.adm-form__field textarea:focus{
+  outline: none; border-color: var(--color-blue); box-shadow: 0 0 0 4px rgba(37,99,235,.12);
+}
+.adm-form__field textarea{ resize: vertical; min-height: 110px; }
+
+.adm-form__field.has-error input,
+.adm-form__field.has-error select,
+.adm-form__field.has-error textarea{ border-color: #DC2626; }
+.adm-form__error{ display: none; font-size: .78rem; color: #DC2626; font-weight: 600; }
+.adm-form__field.has-error .adm-form__error{ display: block; }
+
+.adm-form__submit{ grid-column: 1 / -1; display: flex; align-items: center; gap: 1.2rem; margin-top: .6rem; flex-wrap: wrap; }
+.adm-form__submit p{ font-size: .82rem; margin: 0; }
+
+.adm-form__success{
+  display: none; align-items: center; gap: 1rem; background: #ECFDF5; border: 1px solid #A7F3D0;
+  border-radius: var(--r-md); padding: 1.3rem 1.5rem; margin-bottom: 1.8rem;
+}
+.adm-form__success.is-visible{ display: flex; }
+.adm-form__success .icon{
+  width: 44px; height: 44px; border-radius: 50%; background: #10B981; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.adm-form__success h4{ font-size: .98rem; margin-bottom: .2rem; color: #065F46; }
+.adm-form__success p{ font-size: .86rem; margin: 0; color: #047857; }
+
+@media (max-width: 760px){
+  .adm-form-wrap{ padding: 1.8rem; }
+  .adm-form__grid{ grid-template-columns: 1fr; }
+}
+
+/* ============================== CTA STRIP ============================== */
+.adm-cta{ background: var(--grad-blue); text-align: center; padding: var(--space-xl) 0; color: #fff; position: relative; overflow: hidden; }
+.adm-cta h2{ color: #fff; margin-bottom: .8rem; }
+.adm-cta p{ color: rgba(255,255,255,.85); max-width: 520px; margin: 0 auto 2rem; }
+.adm-cta__actions{ display: flex; justify-content: center; gap: 1.1rem; flex-wrap: wrap; }

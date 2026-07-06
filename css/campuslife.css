@@ -1,0 +1,331 @@
+/* ==========================================================================
+   CAMPUS LIFE PAGE STYLES — extends style.css + home.css shared foundations
+   Sticky "scroll-pinned" gallery sections: text stays static while gallery
+   images progress as the user scrolls through that section's extra height.
+   ========================================================================== */
+
+/* ============================== CATEGORY JUMP NAV ============================ */
+.life-nav {
+  background: var(--color-blue-tint);
+  position: sticky;
+  top: 78px;
+  z-index: 80;
+}
+.life-nav__inner {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.9rem 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.life-nav__inner::-webkit-scrollbar {
+  display: none;
+}
+.life-nav a {
+  flex-shrink: 0;
+  padding: 0.65rem 1.2rem;
+  border-radius: var(--r-pill);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--color-primary);
+  transition: all 0.3s var(--ease);
+}
+.life-nav a:hover,
+.life-nav a.is-active {
+  background: var(--color-primary);
+  color: #fff;
+  border-color: var(--color-primary);
+}
+
+/* ============================== SCROLL-PINNED SECTION ========================= */
+.scrollsec {
+  position: relative;
+  /* height controls how long the section stays pinned; JS also reads this */
+}
+.scrollsec:nth-of-type(even) .scrollsec__sticky {
+  background: linear-gradient(180deg, #fbfcff 0%, #fff 100%);
+}
+
+.scrollsec__sticky {
+  position: sticky;
+  top: 40px;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #fff;
+  overflow: hidden;
+}
+
+.scrollsec__grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* ---- Static info column ---- */
+.scrollsec__info {
+  position: relative;
+  z-index: 2;
+}
+.scrollsec__index {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  color: var(--color-blue);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.scrollsec__info h2 {
+  margin-bottom: 1rem;
+}
+.scrollsec__info p.lead {
+  font-size: 1.02rem;
+  color: var(--color-text-soft);
+  margin-bottom: 1.6rem;
+}
+
+.scrollsec__points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.8rem;
+}
+.scrollsec__points li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.scrollsec__points li::before {
+  content: "✓";
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--grad-gold);
+  color: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+}
+
+/* progress dots reflecting which gallery image is active */
+.scrollsec__progress {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.scrollsec__progress span {
+  width: 26px;
+  height: 4px;
+  border-radius: var(--r-pill);
+  background: var(--color-border);
+  transition: all 0.4s var(--ease-soft);
+}
+.scrollsec__progress span.is-active {
+  background: var(--color-gold);
+  width: 42px;
+}
+.scrollsec__count {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--color-text-soft);
+  margin-left: 0.4rem;
+}
+
+/* ---- Gallery viewport column (populated by JS) ---- */
+.scrollsec__gallery {
+  position: relative;
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  aspect-ratio: 4/3.3;
+  background: var(--color-blue-tint);
+}
+.scrollsec__slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: scale(1.04);
+  transition:
+    opacity 0.7s var(--ease-soft),
+    transform 0.8s var(--ease-soft);
+}
+.scrollsec__slide.is-active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+.scrollsec__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.scrollsec__slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(15, 23, 42, 0.55), transparent 45%);
+}
+.scrollsec__caption {
+  position: absolute;
+  left: 1.4rem;
+  bottom: 1.3rem;
+  z-index: 2;
+  color: #fff;
+}
+.scrollsec__caption b {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+}
+.scrollsec__caption span {
+  font-size: 0.78rem;
+  color: var(--color-gold);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.scrollsec__badge {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  color: var(--color-primary);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--r-pill);
+}
+
+/* ---- Manual arrow navigation (mobile only, see media query below) ---- */
+.scrollsec__arrows {
+  display: none;
+}
+.scrollsec__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  transition:
+    background 0.3s var(--ease),
+    transform 0.3s var(--ease);
+}
+
+.scrollsec__arrow:active {
+  transform: translateY(-50%) scale(0.92);
+}
+.scrollsec__arrow--prev {
+  left: 0.9rem;
+}
+.scrollsec__arrow--next {
+  right: 0.9rem;
+}
+.scrollsec__arrow svg {
+  width: 18px;
+  height: 18px;
+}
+
+.scrollsec__mobile-count {
+  display: none;
+  position: absolute;
+  left: 50%;
+  bottom: 0.9rem;
+  transform: translateX(-50%);
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--r-pill);
+}
+
+/* Alternate gallery/info side per section for visual rhythm */
+.scrollsec:nth-of-type(even) .scrollsec__grid {
+  grid-template-columns: 1.1fr 1fr;
+}
+.scrollsec:nth-of-type(even) .scrollsec__gallery {
+  order: -1;
+}
+
+/* ============================== RESPONSIVE ==================================== */
+@media (max-width: 680px) {
+  .scrollsec__sticky {
+    position: relative;
+    min-height: auto;
+    padding: var(--space-xl) 0;
+  }
+  .scrollsec__grid,
+  .scrollsec:nth-of-type(even) .scrollsec__grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .scrollsec:nth-of-type(even) .scrollsec__gallery {
+    order: 0;
+  }
+  .scrollsec {
+    height: auto !important;
+  }
+  .scrollsec__gallery {
+    aspect-ratio: 16/10;
+  }
+}
+
+@media (max-width: 560px) {
+  .life-nav {
+    top: 0;
+  }
+  .scrollsec__points li {
+    font-size: 0.88rem;
+  }
+}
+
+/* Below 680px: replace scroll-driven progression with manual arrow controls */
+@media (max-width: 680px) {
+  .scrollsec__arrows {
+    display: block;
+  }
+  .scrollsec__progress {
+    display: none;
+  }
+  .scrollsec__mobile-count {
+    display: block;
+  }
+}
+
+/* ============================== SECTION SPACER ================================= */
+.life-hero-note {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+.life-hero-note p {
+  font-size: 0.92rem;
+  color: var(--color-text-soft);
+}
