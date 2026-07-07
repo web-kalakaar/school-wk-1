@@ -23,7 +23,6 @@
       image: "logo.png",
       desc: "Awarded for creating an eco-friendly campus through tree plantation, rainwater harvesting, and sustainable environmental initiatives.",
     },
- 
   ];
   // Class X toppers — no stream grouping
   const TOPPERS_10 = [
@@ -75,74 +74,185 @@
       percentage: "96.8%",
       img: "demoprofile/pfp8.jpg",
     },
+    {
+      session: "2025–26",
+      name: "Ananya Sharma",
+      percentage: "98.4%",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Rohit Meena",
+      percentage: "97.8%",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Priya Gupta",
+      percentage: "97.2%",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Karan Yadav",
+      percentage: "98.0%",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Simran Kaur",
+      percentage: "97.6%",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aditya Rathore",
+      percentage: "96.9%",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Neha Choudhary",
+      percentage: "97.4%",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Vikram Singh",
+      percentage: "96.8%",
+      img: "demoprofile/pfp8.jpg",
+    },
   ];
 
   // Class XII toppers — grouped by stream: Science / Commerce / Arts
-const TOPPERS_12 = [
-  {
-    session: "2025–26",
-    name: "Ishaan Verma",
-    percentage: "96.6%",
-    stream: "Science",
-    img: "demoprofile/pfp3.jpg",
-  },
-  {
-    session: "2025–26",
-    name: "Riya Agarwal",
-    percentage: "95.8%",
-    stream: "Commerce",
-    img: "demoprofile/pfp7.jpg",
-  },
-  {
-    session: "2025–26",
-    name: "Meera Joshi",
-    percentage: "94.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  },
-  {
-    session: "2024–25",
-    name: "Aryan Kapoor",
-    percentage: "97.1%",
-    stream: "Science",
-    img: "demoprofile/pfp8.jpg",
-  },
-  {
-    session: "2024–25",
-    name: "Tanya Bansal",
-    percentage: "95.4%",
-    stream: "Commerce",
-    img: "demoprofile/pfp1.jpg",
-  },
-  {
-    session: "2024–25",
-    name: "Devansh Rana",
-    percentage: "94.2%",
-    stream: "Arts",
-    img: "demoprofile/pfp5.jpg",
-  },
-  {
-    session: "2023–24",
-    name: "Kritika Solanki",
-    percentage: "96.3%",
-    stream: "Science",
-    img: "demoprofile/pfp4.jpg",
-  },
-  {
-    session: "2023–24",
-    name: "Nikhil Chauhan",
-    percentage: "94.7%",
-    stream: "Commerce",
-    img: "demoprofile/pfp6.jpg",
-  },
-  {
-    session: "2023–24",
-    name: "Sanya Malhotra",
-    percentage: "93.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  },
-];
+  const TOPPERS_12 = [
+    {
+      session: "2025–26",
+      name: "Ishaan Verma",
+      percentage: "96.6%",
+      stream: "Science",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Riya Agarwal",
+      percentage: "95.8%",
+      stream: "Commerce",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Meera Joshi",
+      percentage: "94.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aryan Kapoor",
+      percentage: "97.1%",
+      stream: "Science",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Tanya Bansal",
+      percentage: "95.4%",
+      stream: "Commerce",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Devansh Rana",
+      percentage: "94.2%",
+      stream: "Arts",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Kritika Solanki",
+      percentage: "96.3%",
+      stream: "Science",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Nikhil Chauhan",
+      percentage: "94.7%",
+      stream: "Commerce",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Sanya Malhotra",
+      percentage: "93.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Ishaan Verma",
+      percentage: "96.6%",
+      stream: "Science",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Riya Agarwal",
+      percentage: "95.8%",
+      stream: "Commerce",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Meera Joshi",
+      percentage: "94.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aryan Kapoor",
+      percentage: "97.1%",
+      stream: "Science",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Tanya Bansal",
+      percentage: "95.4%",
+      stream: "Commerce",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Devansh Rana",
+      percentage: "94.2%",
+      stream: "Arts",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Kritika Solanki",
+      percentage: "96.3%",
+      stream: "Science",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Nikhil Chauhan",
+      percentage: "94.7%",
+      stream: "Commerce",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Sanya Malhotra",
+      percentage: "93.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+  ];
 
   // Students' own achievements outside school — national/state level
   const STUDENT_ACHIEVEMENTS = [
@@ -263,106 +373,145 @@ const TOPPERS_12 = [
   }
 
   /* =====================================================================
-     5. CAROUSEL SETUP (used for both 10th and 12th default views)
-        Uses native horizontal scrolling + scrollBy() rather than manual
-        transform math — the browser handles clamping at the start/end
-        automatically, so there's nothing to miscalculate.
+     5. CAROUSEL SETUP (used for both 10th and 12th default views) 
   ===================================================================== */
-  function setupCarousel(trackSelector, prevSelector, nextSelector, data) {
-    const track = document.querySelector(trackSelector);
-    if (!track) return;
+ 
+ 
 
-    const viewport = track.parentElement;
-    const prevBtn = document.querySelector(prevSelector);
-    const nextBtn = document.querySelector(nextSelector);
+function setupCarousel(trackSelector, prevSelector, nextSelector, data) {
+  const track = document.querySelector(trackSelector);
+  if (!track) return;
 
-    track.innerHTML = data.map(topperCard).join("");
+  const viewport = track.parentElement;
+  const prevBtn = document.querySelector(prevSelector);
+  const nextBtn = document.querySelector(nextSelector);
 
-    function cardWidth() {
-      const card = track.querySelector(".topper-card");
-      if (!card) return 300;
+  // Duplicate data for seamless loop
+  const loopedData = [...data, ...data];
+  track.innerHTML = loopedData.map(topperCard).join("");
 
-      const gap =
-        parseFloat(getComputedStyle(track).gap) ||
-        parseFloat(getComputedStyle(track).columnGap) ||
-        0;
+  // Force the track to behave like a marquee strip
+  track.style.willChange = "transform";
+  track.style.transition = "none";
+  viewport.style.overflow = "hidden";     // we drive it manually now
 
-      return card.offsetWidth + gap;
-    }
+  let offset = 0;              // current translateX in px (negative = moved left)
+  let halfWidth = 0;           // width of ONE copy of the data set
+  const SPEED = 40;            // pixels per SECOND (try 30–80)
+  let lastTime = performance.now();
+  let paused = false;
 
-    function updateButtons() {
-      const maxScroll = viewport.scrollWidth - viewport.clientWidth;
-
-      if (prevBtn) prevBtn.disabled = viewport.scrollLeft <= 5;
-
-      if (nextBtn) nextBtn.disabled = viewport.scrollLeft >= maxScroll - 5;
-    }
-
-    function scroll(direction) {
-      viewport.scrollLeft += direction * cardWidth();
-    }
-
-    prevBtn?.addEventListener("click", () => scroll(-1));
-    nextBtn?.addEventListener("click", () => scroll(1));
-
-    viewport.addEventListener("scroll", updateButtons);
-
-    window.addEventListener("resize", updateButtons);
-
-    updateButtons();
-
-    /* -----------------------------
-     Drag / Swipe Support
-  ----------------------------- */
-
-    let isDown = false;
-    let startX = 0;
-    let scrollStart = 0;
-
-    viewport.addEventListener("mousedown", (e) => {
-      isDown = true;
-      startX = e.pageX;
-      scrollStart = viewport.scrollLeft;
-      viewport.classList.add("dragging");
-    });
-
-    window.addEventListener("mouseup", () => {
-      isDown = false;
-      viewport.classList.remove("dragging");
-    });
-
-    viewport.addEventListener("mouseleave", () => {
-      isDown = false;
-      viewport.classList.remove("dragging");
-    });
-
-    viewport.addEventListener("mousemove", (e) => {
-      if (!isDown) return;
-
-      e.preventDefault();
-
-      const walk = e.pageX - startX;
-      viewport.scrollLeft = scrollStart - walk;
-    });
-
-    /* Touch Support */
-
-    let touchStart = 0;
-    let touchScroll = 0;
-
-    viewport.addEventListener("touchstart", (e) => {
-      touchStart = e.touches[0].pageX;
-      touchScroll = viewport.scrollLeft;
-    });
-
-    viewport.addEventListener("touchmove", (e) => {
-      const walk = e.touches[0].pageX - touchStart;
-      viewport.scrollLeft = touchScroll - walk;
-    });
-
-    updateButtons();
+  function measure() {
+    // total width of track / 2  = width of one full data set
+    halfWidth = track.scrollWidth / 2;
   }
 
+  function cardStep() {
+    const card = track.querySelector(".topper-card");
+    if (!card) return 240;
+    const gap = parseFloat(getComputedStyle(track).gap) || 0;
+    return card.offsetWidth + gap;
+  }
+
+  function apply() {
+    track.style.transform = `translate3d(${offset}px, 0, 0)`;
+  }
+
+  function tick(now) {
+    const dt = (now - lastTime) / 1000;   // seconds
+    lastTime = now;
+
+    if (!paused) {
+      offset -= SPEED * dt;               // move left continuously
+      if (-offset >= halfWidth) offset += halfWidth;  // seamless wrap
+      apply();
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Arrow navigation — animate a step, then let auto resume
+  function stepBy(direction) {
+    const step = cardStep();
+    const target = offset - direction * step;
+    // smooth transition just for this jump
+    track.style.transition = "transform 400ms cubic-bezier(.22,.61,.36,1)";
+    offset = target;
+    if (-offset >= halfWidth) offset += halfWidth;
+    if (offset > 0) offset -= halfWidth;
+    apply();
+    setTimeout(() => (track.style.transition = "none"), 420);
+  }
+
+  prevBtn?.addEventListener("click", () => stepBy(-1));
+  nextBtn?.addEventListener("click", () => stepBy(1));
+
+  // Pause on hover / touch
+  viewport.addEventListener("mouseenter", () => (paused = true));
+  viewport.addEventListener("mouseleave", () => (paused = false));
+  viewport.addEventListener("touchstart", () => (paused = true), { passive: true });
+  viewport.addEventListener("touchend",   () => (paused = false));
+
+  // Drag support (updates offset instead of scrollLeft)
+  let isDown = false, startX = 0, startOffset = 0;
+
+  viewport.addEventListener("mousedown", (e) => {
+    isDown = true;
+    paused = true;
+    startX = e.pageX;
+    startOffset = offset;
+    viewport.classList.add("dragging");
+    track.style.transition = "none";
+  });
+  window.addEventListener("mouseup", () => {
+    if (!isDown) return;
+    isDown = false;
+    paused = false;
+    viewport.classList.remove("dragging");
+  });
+  viewport.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    offset = startOffset + (e.pageX - startX);
+    if (-offset >= halfWidth) offset += halfWidth;
+    if (offset > 0) offset -= halfWidth;
+    apply();
+  });
+
+  viewport.addEventListener("touchstart", (e) => {
+    startX = e.touches[0].pageX;
+    startOffset = offset;
+  }, { passive: true });
+  viewport.addEventListener("touchmove", (e) => {
+    offset = startOffset + (e.touches[0].pageX - startX);
+    if (-offset >= halfWidth) offset += halfWidth;
+    if (offset > 0) offset -= halfWidth;
+    apply();
+  }, { passive: true });
+
+  // Boot
+  window.addEventListener("resize", measure);
+  // Wait for images so widths are correct
+  const imgs = track.querySelectorAll("img");
+  let loaded = 0;
+  if (imgs.length === 0) {
+    measure();
+    requestAnimationFrame(tick);
+  } else {
+    imgs.forEach((img) => {
+      if (img.complete) done();
+      else {
+        img.addEventListener("load", done);
+        img.addEventListener("error", done);
+      }
+    });
+  }
+  function done() {
+    if (++loaded >= imgs.length) {
+      measure();
+      requestAnimationFrame(tick);
+    }
+  }
+}
   setupCarousel(
     '[data-track="10"]',
     '[data-arrow="10-prev"]',
