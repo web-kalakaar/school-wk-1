@@ -34,9 +34,9 @@
   --font-body: "Manrope", sans-serif;
 
   /* ---- Radius ---- */
-  --r-sm: 14px;
-  --r-md: 20px;
-  --r-lg: 28px;
+  --r-sm: 2px;
+  --r-md: 4px;
+  --r-lg: 5px;
   --r-pill: 999px;
 
   /* ---- Shadow ---- */
@@ -311,7 +311,7 @@ p {
 .card {
   background: var(--color-card);
   border: 1px solid var(--color-border);
-  border-radius: var(--r-lg);
+  border-radius: var(--r-sm);
   box-shadow: var(--shadow-sm);
   transition:
     transform 0.45s var(--ease-soft),
