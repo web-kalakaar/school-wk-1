@@ -8,19 +8,19 @@
     {
       year: "2025",
       title: "Best School Excellence Award",
-      image: "logo.png",
+      image: "sks.png",
       desc: "Honoured for exceptional academic performance, modern teaching methods, and outstanding board examination results.",
     },
     {
       year: "2024",
       title: "Excellence in Science Education",
-      image: "logo.png",
+      image: "sks.png",
       desc: "Recognised for state-of-the-art science laboratories, innovation projects, and remarkable achievements in science competitions.",
     },
     {
       year: "2024",
       title: "Green Campus Recognition",
-      image: "logo.png",
+      image: "sks.png",
       desc: "Awarded for creating an eco-friendly campus through tree plantation, rainwater harvesting, and sustainable environmental initiatives.",
     },
   ];

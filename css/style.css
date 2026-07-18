@@ -1,5 +1,5 @@
 /* ==========================================================================
-   RADHE KRISHNA SENIOR SECONDARY SCHOOL — CORE STYLESHEET
+   Sant Kirpal SENIOR SECONDARY SCHOOL — CORE STYLESHEET
    Variables, reset, typography, buttons, shared utility classes
    ========================================================================== */
 
@@ -113,8 +113,8 @@ body {
   background: var(--color-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden; 
-   overflow-x: clip;
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Focus visibility for accessibility */
@@ -408,121 +408,117 @@ p {
    ========================================================================== */
 
 .loader {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    background: #ffffff;
+  background: #ffffff;
 
-    transition:
-        opacity .7s ease,
-        visibility .7s ease;
+  transition:
+    opacity 0.7s ease,
+    visibility 0.7s ease;
 }
 
 .loader-hidden {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .loader__content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .loader__title {
-    margin: 0;
+  margin: 0;
 
-    font-size: clamp(2rem, 5vw, 3.6rem);
-    font-weight: 800;
-    letter-spacing: .06em;
-    text-transform: uppercase;
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 
-    color: #1E3A8A;
+  color: #1e3a8a;
 
-    opacity: 0;
-    transform: translateY(18px);
+  opacity: 0;
+  transform: translateY(18px);
 
-    animation: loaderFadeUp .8s ease forwards;
+  animation: loaderFadeUp 0.8s ease forwards;
 }
 
 .loader__title span {
-    color: #F59E0B;
+  color: #f59e0b;
 }
 
 .loader__subtitle {
-    margin-top: .75rem;
+  margin-top: 0.75rem;
 
-    font-size: .95rem;
-    font-weight: 500;
-    letter-spacing: .22em;
-    text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
 
-    color: #6B7280;
+  color: #6b7280;
 
-    opacity: 0;
+  opacity: 0;
 
-    animation: loaderFadeUp .8s ease .15s forwards;
+  animation: loaderFadeUp 0.8s ease 0.15s forwards;
 }
 
 .loader__dots {
-    display: flex;
-    gap: .6rem;
-    margin-top: 2rem;
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 2rem;
 
-    opacity: 0;
+  opacity: 0;
 
-    animation: loaderFadeUp .8s ease .3s forwards;
+  animation: loaderFadeUp 0.8s ease 0.3s forwards;
 }
 
 .loader__dots span {
-    width: 12px;
-    height: 12px;
+  width: 12px;
+  height: 12px;
 
-    border-radius: 50%;
+  border-radius: 50%;
 
-    background: #1E3A8A;
+  background: #1e3a8a;
 
-    animation: loaderBounce 1.2s infinite ease-in-out;
+  animation: loaderBounce 1.2s infinite ease-in-out;
 }
 
 .loader__dots span:nth-child(2) {
-    animation-delay: .15s;
+  animation-delay: 0.15s;
 }
 
 .loader__dots span:nth-child(3) {
-    animation-delay: .3s;
+  animation-delay: 0.3s;
 }
 
 @keyframes loaderBounce {
+  0%,
+  80%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.35;
+  }
 
-    0%,
-    80%,
-    100% {
-        transform: translateY(0);
-        opacity: .35;
-    }
-
-    40% {
-        transform: translateY(-10px);
-        opacity: 1;
-    }
-
+  40% {
+    transform: translateY(-10px);
+    opacity: 1;
+  }
 }
 
 @keyframes loaderFadeUp {
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ============================== 1. NAVBAR ================================ */
@@ -559,21 +555,20 @@ p {
   display: flex;
   align-items: center;
   gap: 0.8rem;
+  background-color: none;
 }
 .navbar__logo {
   width: 48px;
   height: 48px;
   border-radius: 14px;
-  background: var(--grad-blue);
+  background: none;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
   font-weight: 800;
-  color: #fff;
   overflow: hidden;
   font-size: 1.15rem;
-  box-shadow: var(--shadow-blue);
   flex-shrink: 0;
 }
 .navbar__logo img {
@@ -895,7 +890,6 @@ p {
   color: var(--color-gold);
 }
 
-
 /* ============================== 8. ADMISSION CTA ============================ */
 .admission {
   position: relative;
@@ -1023,7 +1017,6 @@ p {
   margin-bottom: 1.1rem;
 }
 
-
 .contact-card h4 {
   font-size: 1.02rem;
   margin-bottom: 0.5rem;
@@ -1107,7 +1100,7 @@ p {
 }
 .footer__top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr 1fr  1.2fr;
+  grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
   gap: 2.5rem;
   padding-bottom: var(--space-lg);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -1143,8 +1136,6 @@ p {
   padding-left: 4px;
 }
 
- 
-
 .footer__bottom {
   display: flex;
   justify-content: space-between;
@@ -1173,8 +1164,6 @@ p {
     text-align: center;
   }
 }
-
-
 
 @media (max-width: 760px) {
   .contact__grid {
