@@ -555,8 +555,7 @@ p {
   display: flex;
   align-items: center;
   gap: 0.8rem;
-  background-color: none;
-}
+ }
 .navbar__logo {
   width: 48px;
   height: 48px;
