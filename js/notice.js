@@ -1,5 +1,14 @@
+/**
+ * ============================================================================
+ * HOME — NOTICE MARQUEE
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Duplicates the notice/highlights card list once so the vertical
+ * auto-scroll marquee loops seamlessly (pauses on hover via CSS).
+ */
+
 /* notice.js — infinite vertical auto-scrolling notice/highlights feed (pause on hover via CSS) */
-(function () {
+(function() {
   const track = document.querySelector('[data-notice-track]');
   if (!track) return;
 

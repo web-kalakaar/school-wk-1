@@ -1,3 +1,13 @@
+/**
+ * ============================================================================
+ * CAMPUS LIFE PAGE STYLES
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Styles scoped to campuslife.html — sticky scroll-pinned gallery sections
+ * and the category jump navigation bar.
+ * Depends on: style.css, home.css
+ */
+
 /* ==========================================================================
    CAMPUS LIFE PAGE STYLES — extends style.css + home.css shared foundations
    Sticky "scroll-pinned" gallery sections: text stays static while gallery
@@ -11,6 +21,7 @@
   top: 78px;
   z-index: 80;
 }
+
 .life-nav__inner {
   display: flex;
   gap: 0.6rem;
@@ -18,9 +29,11 @@
   overflow-x: auto;
   scrollbar-width: none;
 }
+
 .life-nav__inner::-webkit-scrollbar {
   display: none;
 }
+
 .life-nav a {
   flex-shrink: 0;
   padding: 0.65rem 1.2rem;
@@ -33,6 +46,7 @@
   color: var(--color-primary);
   transition: all 0.3s var(--ease);
 }
+
 .life-nav a:hover,
 .life-nav a.is-active {
   background: var(--color-primary);
@@ -45,6 +59,7 @@
   position: relative;
   /* height controls how long the section stays pinned; JS also reads this */
 }
+
 .scrollsec:nth-of-type(even) .scrollsec__sticky {
   background: linear-gradient(180deg, #fbfcff 0%, #fff 100%);
 }
@@ -72,6 +87,7 @@
   position: relative;
   z-index: 2;
 }
+
 .scrollsec__index {
   font-family: var(--font-display);
   font-weight: 800;
@@ -81,9 +97,11 @@
   margin-bottom: 0.8rem;
   display: block;
 }
+
 .scrollsec__info h2 {
   margin-bottom: 1rem;
 }
+
 .scrollsec__info p.lead {
   font-size: 1.02rem;
   color: var(--color-text-soft);
@@ -96,6 +114,7 @@
   gap: 0.75rem;
   margin-bottom: 1.8rem;
 }
+
 .scrollsec__points li {
   display: flex;
   align-items: flex-start;
@@ -103,6 +122,7 @@
   font-size: 0.92rem;
   color: var(--color-text);
 }
+
 .scrollsec__points li::before {
   content: "✓";
   flex-shrink: 0;
@@ -125,6 +145,7 @@
   gap: 0.5rem;
   align-items: center;
 }
+
 .scrollsec__progress span {
   width: 26px;
   height: 4px;
@@ -132,10 +153,12 @@
   background: var(--color-border);
   transition: all 0.4s var(--ease-soft);
 }
+
 .scrollsec__progress span.is-active {
   background: var(--color-gold);
   width: 42px;
 }
+
 .scrollsec__count {
   font-family: var(--font-display);
   font-weight: 700;
@@ -153,6 +176,7 @@
   aspect-ratio: 4/3.3;
   background: var(--color-blue-tint);
 }
+
 .scrollsec__slide {
   position: absolute;
   inset: 0;
@@ -162,22 +186,26 @@
     opacity 0.7s var(--ease-soft),
     transform 0.8s var(--ease-soft);
 }
+
 .scrollsec__slide.is-active {
   opacity: 1;
   transform: scale(1);
   z-index: 1;
 }
+
 .scrollsec__slide img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
+
 .scrollsec__slide::after {
   content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(0deg, rgba(15, 23, 42, 0.55), transparent 45%);
 }
+
 .scrollsec__caption {
   position: absolute;
   left: 1.4rem;
@@ -185,11 +213,13 @@
   z-index: 2;
   color: #fff;
 }
+
 .scrollsec__caption b {
   display: block;
   font-family: var(--font-display);
   font-size: 1.05rem;
 }
+
 .scrollsec__caption span {
   font-size: 0.78rem;
   color: var(--color-gold);
@@ -217,6 +247,7 @@
 .scrollsec__arrows {
   display: none;
 }
+
 .scrollsec__arrow {
   position: absolute;
   top: 50%;
@@ -239,12 +270,15 @@
 .scrollsec__arrow:active {
   transform: translateY(-50%) scale(0.92);
 }
+
 .scrollsec__arrow--prev {
   left: 0.9rem;
 }
+
 .scrollsec__arrow--next {
   right: 0.9rem;
 }
+
 .scrollsec__arrow svg {
   width: 18px;
   height: 18px;
@@ -271,6 +305,7 @@
 .scrollsec:nth-of-type(even) .scrollsec__grid {
   grid-template-columns: 1.1fr 1fr;
 }
+
 .scrollsec:nth-of-type(odd) .scrollsec__gallery {
   order: -1;
 }
@@ -282,17 +317,21 @@
     min-height: auto;
     padding: var(--space-xl) 0;
   }
+
   .scrollsec__grid,
   .scrollsec:nth-of-type(even) .scrollsec__grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+
   .scrollsec:nth-of-type(even) .scrollsec__gallery {
     order: 0;
   }
+
   .scrollsec {
     height: auto !important;
   }
+
   .scrollsec__gallery {
     aspect-ratio: 16/10;
   }
@@ -302,6 +341,7 @@
   .life-nav {
     top: 0;
   }
+
   .scrollsec__points li {
     font-size: 0.88rem;
   }
@@ -312,9 +352,11 @@
   .scrollsec__arrows {
     display: block;
   }
+
   .scrollsec__progress {
     display: none;
   }
+
   .scrollsec__mobile-count {
     display: block;
   }
@@ -325,6 +367,7 @@
   text-align: center;
   padding-bottom: 1rem;
 }
+
 .life-hero-note p {
   font-size: 0.92rem;
   color: var(--color-text-soft);

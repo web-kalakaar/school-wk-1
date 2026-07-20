@@ -1,36 +1,55 @@
+/**
+ * ============================================================================
+ * NAVBAR
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Sticky navbar background on scroll, mobile hamburger menu open/close,
+ * and the mobile accordion submenu toggles.
+ */
+
 /* navbar.js — sticky navbar on scroll + mobile hamburger menu */
-(function () {
+(function() {
   const navbar = document.querySelector('[data-navbar]');
   const hamburger = document.querySelector('[data-hamburger]');
   const mobileNav = document.querySelector('[data-mobile-nav]');
   const overlay = document.querySelector('[data-mobile-overlay]');
 
-  /* ---- sticky state ---- */
-  function onScroll() {
+  /* ---- sticky state (rAF-throttled so it never fires more than once per frame) ---- */
+  let scrollTicking = false;
+  function applyScrollState() {
     if (!navbar) return;
-    if (window.scrollY > 40) navbar.classList.add('is-scrolled');
-    else navbar.classList.remove('is-scrolled');
+    navbar.classList.toggle('is-scrolled', window.scrollY > 40);
+    scrollTicking = false;
   }
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll();
+  function onScroll() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(applyScrollState);
+  }
+  window.addEventListener('scroll', onScroll, {
+    passive: true
+  });
+  applyScrollState();
 
   /* ---- mobile menu toggle ---- */
   function openMenu() {
-    hamburger.classList.add('is-active');
-    mobileNav.classList.add('is-open');
-    overlay.classList.add('is-open');
-    hamburger.classList.add('aria-expanded', 'true');
-    navbar.classList.add('is-scrolled')
+    if (hamburger) hamburger.classList.add('is-active');
+    if (mobileNav) mobileNav.classList.add('is-open');
+    if (overlay) overlay.classList.add('is-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'true');
+    if (navbar) navbar.classList.add('is-scrolled');
     document.documentElement.style.overflow = 'hidden';
   }
+
   function closeMenu() {
-    hamburger.classList.remove('is-active');
-    mobileNav.classList.remove('is-open');
-    overlay.classList.remove('is-open');
-    hamburger.setAttribute('aria-expanded', 'false');
+    if (hamburger) hamburger.classList.remove('is-active');
+    if (mobileNav) mobileNav.classList.remove('is-open');
+    if (overlay) overlay.classList.remove('is-open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
     document.documentElement.style.overflow = '';
   }
   if (hamburger) {
+    hamburger.setAttribute('aria-expanded', 'false');
     hamburger.addEventListener('click', () => {
       hamburger.classList.contains('is-active') ? closeMenu() : openMenu();
     });
@@ -42,6 +61,7 @@
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const sub = btn.nextElementSibling;
+      if (!sub) return;
       const isOpen = sub.classList.contains('is-open');
       document.querySelectorAll('.mobile-nav__sub').forEach((s) => s.classList.remove('is-open'));
       if (!isOpen) sub.classList.add('is-open');

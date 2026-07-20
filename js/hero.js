@@ -1,5 +1,14 @@
+/**
+ * ============================================================================
+ * HOME — HERO SLIDER
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Auto-advancing background slide carousel for the homepage hero, with
+ * clickable dot navigation. Home page only.
+ */
+
 /* hero.js — hero background slide carousel with dot navigation */
-(function () {
+(function() {
   const slides = document.querySelectorAll('[data-hero-slide]');
   const dots = document.querySelectorAll('[data-hero-dot]');
   if (!slides.length) return;
@@ -22,6 +31,7 @@
     stop();
     timer = window.setInterval(next, INTERVAL);
   }
+
   function stop() {
     if (timer) window.clearInterval(timer);
   }
@@ -33,6 +43,15 @@
     });
   });
 
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Pause the auto-advance while the tab is hidden (saves battery/CPU on
+  // mobile) and resume when the user comes back to it.
+  document.addEventListener('visibilitychange', () => {
+    if (reduceMotion) return;
+    document.hidden ? stop() : start();
+  });
+
   show(0);
-  start();
+  if (!reduceMotion) start();
 })();

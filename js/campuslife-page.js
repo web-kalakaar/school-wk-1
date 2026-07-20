@@ -1,7 +1,18 @@
+/**
+ * ============================================================================
+ * CAMPUS LIFE PAGE — SCROLL-PINNED GALLERIES
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Builds each category gallery from data and drives the sticky,
+ * scroll-pinned effect: while a section is pinned, scrolling advances the
+ * active gallery image. Falls back to manual arrow navigation on mobile.
+ * campuslife.html only.
+ */
+
 /* campuslife.js — builds each category gallery from data and drives the
    scroll-pinned effect: while a section is pinned (sticky), scrolling through
    its extra height advances the gallery image instead of the page. */
-(function () {
+(function() {
   /* ---------------------------------------------------------------------
      1. GALLERY DATA — one entry per section. Every image currently points
         to the school schoolgallery/campus.webpa placeholder; swap `src` values for real
@@ -10,69 +21,124 @@
   const GALLERY_DATA = {
     infrastructure: {
       title: "Infrastructure",
-      images: [
-        { src: "schoolgallery/campus.webp", caption: "Main Academic Block" },
-        { src: "schoolgallery/campus2.webp", caption: "Central Library" },
-        { src: "schoolgallery/campus3.webp", caption: "Multipurpose Auditorium" },
-        { src: "schoolgallery/campus2.webp", caption: "Reception & Admin Block" },
-        { src: "schoolgallery/campus4.webp", caption: "Open Corridors & Courtyards" },
-      ],
+      images: [{
+        src: "schoolgallery/campus.webp",
+        caption: "Main Academic Block"
+      }, {
+        src: "schoolgallery/campus2.webp",
+        caption: "Central Library"
+      }, {
+        src: "schoolgallery/campus3.webp",
+        caption: "Multipurpose Auditorium"
+      }, {
+        src: "schoolgallery/campus2.webp",
+        caption: "Reception & Admin Block"
+      }, {
+        src: "schoolgallery/campus4.webp",
+        caption: "Open Corridors & Courtyards"
+      }, ],
     },
     classrooms: {
       title: "Modern Classrooms",
-      images: [
-        { src: "schoolgallery/classroom1.jpg", caption: "Smart Interactive Classrooms" },
-        { src: "schoolgallery/classroom2.jpg", caption: "Activity & Discussion Rooms" },
-        { src: "schoolgallery/classroom3.jpg", caption: "Primary Wing Learning Corner" },
-        { src: "schoolgallery/classroom4.jpg", caption: "Senior Secondary Lecture Halls" },
-      ],
+      images: [{
+        src: "schoolgallery/classroom1.jpg",
+        caption: "Smart Interactive Classrooms"
+      }, {
+        src: "schoolgallery/classroom2.jpg",
+        caption: "Activity & Discussion Rooms"
+      }, {
+        src: "schoolgallery/classroom3.jpg",
+        caption: "Primary Wing Learning Corner"
+      }, {
+        src: "schoolgallery/classroom4.jpg",
+        caption: "Senior Secondary Lecture Halls"
+      }, ],
     },
     labs: {
       title: "Laboratories",
-      images: [
-        { src: "schoolgallery/science1.jpg", caption: "Physics Laboratory" },
-        { src: "schoolgallery/science2.jpg", caption: "Chemistry Laboratory" },
-        { src: "schoolgallery/science1.jpg", caption: "Biology Laboratory" },
-        { src: "schoolgallery/science2.jpg", caption: "Computer Science Lab" },
-      ],
+      images: [{
+        src: "schoolgallery/science1.jpg",
+        caption: "Physics Laboratory"
+      }, {
+        src: "schoolgallery/science2.jpg",
+        caption: "Chemistry Laboratory"
+      }, {
+        src: "schoolgallery/science1.jpg",
+        caption: "Biology Laboratory"
+      }, {
+        src: "schoolgallery/science2.jpg",
+        caption: "Computer Science Lab"
+      }, ],
     },
     sports: {
       title: "Sports Facilities",
-      images: [
-        { src: "schoolgallery/sports.jpg", caption: "Basketball & Volleyball Courts" },
-        { src: "schoolgallery/sports2.jpg", caption: "Athletics Track & Field" },
-        { src: "schoolgallery/sports3.jpg", caption: "Indoor Games Room" },
-        { src: "schoolgallery/sports4.jpg", caption: "Yoga & Fitness Area" },
-        { src: "schoolgallery/sports3.jpg", caption: "Cricket & Football Ground" },
-      ],
+      images: [{
+        src: "schoolgallery/sports.jpg",
+        caption: "Basketball & Volleyball Courts"
+      }, {
+        src: "schoolgallery/sports2.jpg",
+        caption: "Athletics Track & Field"
+      }, {
+        src: "schoolgallery/sports3.jpg",
+        caption: "Indoor Games Room"
+      }, {
+        src: "schoolgallery/sports4.jpg",
+        caption: "Yoga & Fitness Area"
+      }, {
+        src: "schoolgallery/sports3.jpg",
+        caption: "Cricket & Football Ground"
+      }, ],
     },
     activities: {
       title: "Activities & Clubs",
-      images: [
-        { src: "schoolgallery/campus.webp", caption: "Art & Craft Club" },
-        { src: "schoolgallery/campus2.webp", caption: "Music & Instrument Practice" },
-        { src: "schoolgallery/campus3.webp", caption: "Dance & Performance Club" },
-        { src: "schoolgallery/campus4.webp", caption: "Debate & Elocution Society" },
-      ],
+      images: [{
+        src: "schoolgallery/campus.webp",
+        caption: "Art & Craft Club"
+      }, {
+        src: "schoolgallery/campus2.webp",
+        caption: "Music & Instrument Practice"
+      }, {
+        src: "schoolgallery/campus3.webp",
+        caption: "Dance & Performance Club"
+      }, {
+        src: "schoolgallery/campus4.webp",
+        caption: "Debate & Elocution Society"
+      }, ],
     },
     events: {
       title: "Events & Celebrations",
-      images: [
-        { src: "schoolgallery/annual.jpg", caption: "Annual Day Celebration" },
-        { src: "schoolgallery/annual2.jpg", caption: "Independence Day Function" },
-        { src: "schoolgallery/annual3.jpg", caption: "Annual Sports Day" },
-        { src: "schoolgallery/annual4.jpg", caption: "Cultural Fest" },
-        { src: "schoolgallery/annual3.jpg", caption: "Festival Celebrations" },
-      ],
+      images: [{
+        src: "schoolgallery/annual.jpg",
+        caption: "Annual Day Celebration"
+      }, {
+        src: "schoolgallery/annual2.jpg",
+        caption: "Independence Day Function"
+      }, {
+        src: "schoolgallery/annual3.jpg",
+        caption: "Annual Sports Day"
+      }, {
+        src: "schoolgallery/annual4.jpg",
+        caption: "Cultural Fest"
+      }, {
+        src: "schoolgallery/annual3.jpg",
+        caption: "Festival Celebrations"
+      }, ],
     },
     trips: {
       title: "Educational Trips",
-      images: [
-        { src: "schoolgallery/campus.webp", caption: "Historical Heritage Trip" },
-        { src: "schoolgallery/campus.webp", caption: "Science City Excursion" },
-        { src: "schoolgallery/campus.webp", caption: "Adventure & Nature Camp" },
-        { src: "schoolgallery/campus.webp", caption: "Industrial & Career Visit" },
-      ],
+      images: [{
+        src: "schoolgallery/campus.webp",
+        caption: "Historical Heritage Trip"
+      }, {
+        src: "schoolgallery/campus.webp",
+        caption: "Science City Excursion"
+      }, {
+        src: "schoolgallery/campus.webp",
+        caption: "Adventure & Nature Camp"
+      }, {
+        src: "schoolgallery/campus.webp",
+        caption: "Industrial & Career Visit"
+      }, ],
     },
   };
 
@@ -81,6 +147,10 @@
         inside each [data-gallery] placeholder.
   --------------------------------------------------------------------- */
   const sections = document.querySelectorAll("[data-scrollsec]");
+
+  // Cache each section's frequently-updated elements once, instead of
+  // re-querying the DOM on every scroll frame (see setActiveSlide below).
+  const sectionRefs = new Map();
 
   sections.forEach((section) => {
     const key = section.getAttribute("data-scrollsec");
@@ -116,11 +186,11 @@
     if (dotsEl) {
       dotsEl.innerHTML =
         data.images
-          .map(
-            (_, i) =>
-              `<span data-dot="${i}"${i === 0 ? ' class="is-active"' : ""}></span>`,
-          )
-          .join("") +
+        .map(
+          (_, i) =>
+          `<span data-dot="${i}"${i === 0 ? ' class="is-active"' : ""}></span>`,
+        )
+        .join("") +
         `<span class="scrollsec__count" data-count>1 / ${data.images.length}</span>`;
     }
 
@@ -129,6 +199,15 @@
     const extraVh = (data.images.length - 1) * 60;
     section.style.height = `calc(100vh + ${extraVh}vh)`;
     section.dataset.slideCount = data.images.length;
+
+    // Cache references now that the markup exists — avoids repeat querySelectorAll
+    // calls inside setActiveSlide, which previously ran on every scroll frame.
+    sectionRefs.set(section, {
+      slides: section.querySelectorAll("[data-slide]"),
+      dots: section.querySelectorAll("[data-dot]"),
+      countEl: section.querySelector("[data-count]"),
+      mobileCountEl: section.querySelector("[data-count-mobile]"),
+    });
   });
 
   /* ---------------------------------------------------------------------
@@ -139,19 +218,21 @@
   function setActiveSlide(section, activeIndex) {
     const count = parseInt(section.dataset.slideCount, 10) || 1;
     const clamped = Math.max(0, Math.min(count - 1, activeIndex));
+
+    // No-op guard: skip all DOM writes if the slide hasn't actually changed —
+    // this is what keeps scroll-driven updates from thrashing layout/paint.
+    if (parseInt(section.dataset.activeIndex, 10) === clamped) return;
     section.dataset.activeIndex = clamped;
 
-    const slides = section.querySelectorAll("[data-slide]");
-    const dots = section.querySelectorAll("[data-dot]");
-    const countEl = section.querySelector("[data-count]");
-    const mobileCountEl = section.querySelector("[data-count-mobile]");
+    const refs = sectionRefs.get(section);
+    if (!refs) return;
 
-    slides.forEach((slide, i) =>
+    refs.slides.forEach((slide, i) =>
       slide.classList.toggle("is-active", i === clamped),
     );
-    dots.forEach((dot, i) => dot.classList.toggle("is-active", i === clamped));
-    if (countEl) countEl.textContent = `${clamped + 1} / ${count}`;
-    if (mobileCountEl) mobileCountEl.textContent = `${clamped + 1} / ${count}`;
+    refs.dots.forEach((dot, i) => dot.classList.toggle("is-active", i === clamped));
+    if (refs.countEl) refs.countEl.textContent = `${clamped + 1} / ${count}`;
+    if (refs.mobileCountEl) refs.mobileCountEl.textContent = `${clamped + 1} / ${count}`;
   }
 
   /* ---------------------------------------------------------------------
@@ -183,6 +264,7 @@
   }
 
   let ticking = false;
+
   function onScroll() {
     if (!ticking) {
       window.requestAnimationFrame(() => {
@@ -193,8 +275,15 @@
     }
   }
 
-  window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", updateActiveSlides);
+  window.addEventListener("scroll", onScroll, {
+    passive: true
+  });
+
+  let resizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(updateActiveSlides, 150);
+  });
   updateActiveSlides();
 
   /* ---------------------------------------------------------------------
@@ -240,8 +329,10 @@
             });
           }
         });
+      }, {
+        threshold: 0,
+        rootMargin: "-45% 0px -45% 0px"
       },
-      { threshold: 0, rootMargin: "-45% 0px -45% 0px" },
     );
     sections.forEach((s) => navObserver.observe(s));
   }

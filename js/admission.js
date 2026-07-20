@@ -1,58 +1,103 @@
+/**
+ * ============================================================================
+ * ADMISSION PAGE — FEES + ENQUIRY FORM
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Renders the fee-structure tabs/tables from data and handles client-side
+ * validation plus the success state for the admission enquiry form.
+ * admission.html only.
+ */
+
 /* admission.js — renders the fee structure tables from data and handles
    client-side validation + success state for the admission enquiry form. */
-(function () {
+(function() {
   /* =====================================================================
      1. FEE STRUCTURE DATA & RENDER
   ===================================================================== */
   const FEE_DATA = {
     Play: {
       label: "Play (Nur. – Ukg)",
-      rows: [
-        { head: "Admission Fee (one-time)", amount: "₹8,000" },
-        { head: "Tuition Fee (annual)", amount: "₹28,000" },
-        { head: "Development Fee (annual)", amount: "₹4,500" },
-        { head: "Transport Fee (annual, optional)", amount: "₹9,000" },
-      ],
+      rows: [{
+        head: "Admission Fee (one-time)",
+        amount: "₹8,000"
+      }, {
+        head: "Tuition Fee (annual)",
+        amount: "₹28,000"
+      }, {
+        head: "Development Fee (annual)",
+        amount: "₹4,500"
+      }, {
+        head: "Transport Fee (annual, optional)",
+        amount: "₹9,000"
+      }, ],
       total: "₹49,500",
-    },   
-     primary: {
+    },
+    primary: {
       label: "Primary (I – V)",
-      rows: [
-        { head: "Admission Fee (one-time)", amount: "₹8,000" },
-        { head: "Tuition Fee (annual)", amount: "₹28,000" },
-        { head: "Development Fee (annual)", amount: "₹4,500" },
-        { head: "Transport Fee (annual, optional)", amount: "₹9,000" },
-      ],
+      rows: [{
+        head: "Admission Fee (one-time)",
+        amount: "₹8,000"
+      }, {
+        head: "Tuition Fee (annual)",
+        amount: "₹28,000"
+      }, {
+        head: "Development Fee (annual)",
+        amount: "₹4,500"
+      }, {
+        head: "Transport Fee (annual, optional)",
+        amount: "₹9,000"
+      }, ],
       total: "₹49,500",
     },
     middle: {
       label: "Middle (VI – VIII)",
-      rows: [
-        { head: "Admission Fee (one-time)", amount: "₹9,000" },
-        { head: "Tuition Fee (annual)", amount: "₹32,000" },
-        { head: "Lab & Development Fee (annual)", amount: "₹6,000" },
-        { head: "Transport Fee (annual, optional)", amount: "₹9,000" },
-      ],
+      rows: [{
+        head: "Admission Fee (one-time)",
+        amount: "₹9,000"
+      }, {
+        head: "Tuition Fee (annual)",
+        amount: "₹32,000"
+      }, {
+        head: "Lab & Development Fee (annual)",
+        amount: "₹6,000"
+      }, {
+        head: "Transport Fee (annual, optional)",
+        amount: "₹9,000"
+      }, ],
       total: "₹56,000",
     },
     secondary: {
       label: "Secondary (IX – X)",
-      rows: [
-        { head: "Admission Fee (one-time)", amount: "₹10,000" },
-        { head: "Tuition Fee (annual)", amount: "₹36,000" },
-        { head: "Lab & Exam Fee (annual)", amount: "₹7,500" },
-        { head: "Transport Fee (annual, optional)", amount: "₹9,000" },
-      ],
+      rows: [{
+        head: "Admission Fee (one-time)",
+        amount: "₹10,000"
+      }, {
+        head: "Tuition Fee (annual)",
+        amount: "₹36,000"
+      }, {
+        head: "Lab & Exam Fee (annual)",
+        amount: "₹7,500"
+      }, {
+        head: "Transport Fee (annual, optional)",
+        amount: "₹9,000"
+      }, ],
       total: "₹62,500",
     },
     senior: {
       label: "Senior Secondary (XI – XII)",
-      rows: [
-        { head: "Admission Fee (one-time)", amount: "₹12,000" },
-        { head: "Tuition Fee (annual)", amount: "₹42,000" },
-        { head: "Stream Lab & Practical Fee (annual)", amount: "₹9,500" },
-        { head: "Transport Fee (annual, optional)", amount: "₹9,000" },
-      ],
+      rows: [{
+        head: "Admission Fee (one-time)",
+        amount: "₹12,000"
+      }, {
+        head: "Tuition Fee (annual)",
+        amount: "₹42,000"
+      }, {
+        head: "Stream Lab & Practical Fee (annual)",
+        amount: "₹9,500"
+      }, {
+        head: "Transport Fee (annual, optional)",
+        amount: "₹9,000"
+      }, ],
       total: "₹72,500",
     },
   };
@@ -66,7 +111,7 @@
     tabsWrap.innerHTML = keys
       .map(
         (key, i) =>
-          `<button type="button" data-fee-tab="${key}" class="${i === 0 ? "is-active" : ""}">${FEE_DATA[key].label}</button>`,
+        `<button type="button" data-fee-tab="${key}" class="${i === 0 ? "is-active" : ""}">${FEE_DATA[key].label}</button>`,
       )
       .join("");
 

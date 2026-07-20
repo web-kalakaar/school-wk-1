@@ -1,7 +1,18 @@
+/**
+ * ============================================================================
+ * APP ENTRY POINT
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Small cross-cutting setup that runs on every page: marks the document
+ * as JS-ready, injects the current year in the footer, and wires up the
+ * newsletter form placeholder. Page-specific behaviour lives in its own
+ * file (navbar.js, hero.js, admission.js, etc.) and is loaded separately.
+ */
+
 /* main.js — entry point. Individual task scripts (loader.js, navbar.js, hero.js,
    counters.js, campuslife.js, notice.js, animations.js, backtotop.js) are loaded
    separately in index.html; this file only holds small cross-cutting setup. */
-(function () {
+(function() {
   document.documentElement.classList.add('js-ready');
 
   // Current year in footer

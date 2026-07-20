@@ -1,3 +1,13 @@
+/**
+ * ============================================================================
+ * ACHIEVEMENTS PAGE STYLES
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Styles scoped to achievements.html — stats hero, awards grid, academic
+ * toppers carousel + "view all" modal, and student achievements grid.
+ * Depends on: style.css, home.css
+ */
+
 /* ==========================================================================
    ACHIEVEMENTS PAGE STYLES — extends style.css + home.css shared foundations
    ========================================================================== */
@@ -15,23 +25,24 @@
   background-size: cover;
   background-position: center;
 }
+
 .ach-hero__shape {
   position: absolute;
   border-radius: 50%;
   opacity: 0.5;
   z-index: 0;
 }
+
 .ach-hero__shape--1 {
   width: 260px;
   height: 260px;
-  background: radial-gradient(
-    circle,
-    rgba(251, 191, 36, 0.35),
-    transparent 70%
-  );
+  background: radial-gradient(circle,
+      rgba(251, 191, 36, 0.35),
+      transparent 70%);
   top: -70px;
   left: -50px;
 }
+
 .ach-hero__shape--2 {
   width: 320px;
   height: 320px;
@@ -39,27 +50,33 @@
   bottom: -110px;
   right: -70px;
 }
+
 .ach-hero__inner {
   position: relative;
   z-index: 2;
 }
+
 .ach-hero .eyebrow {
   background: rgba(255, 255, 255, 0.12);
   color: var(--color-gold);
 }
+
 .ach-hero .eyebrow::before {
   background: var(--color-gold);
 }
+
 .ach-hero h1 {
   color: #fff;
   margin-bottom: 0.9rem;
   font-size: clamp(2.1rem, 4vw, 3.2rem);
 }
+
 .ach-hero p.lead {
   color: rgba(255, 255, 255, 0.82);
   max-width: 600px;
   margin: 0 auto;
 }
+
 .ach-hero .breadcrumb {
   display: inline-flex;
   align-items: center;
@@ -69,12 +86,15 @@
   font-weight: 600;
   color: rgba(255, 255, 255, 0.65);
 }
+
 .ach-hero .breadcrumb a {
   color: rgba(255, 255, 255, 0.9);
 }
+
 .ach-hero .breadcrumb a:hover {
   color: var(--color-gold);
 }
+
 .ach-hero .breadcrumb span {
   color: var(--color-gold);
 }
@@ -88,6 +108,7 @@
   max-width: 980px;
   margin: 3rem auto 0;
 }
+
 .ach-hero__stat {
   background: rgba(255, 255, 255, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -98,10 +119,12 @@
     transform 0.4s var(--ease-soft),
     background 0.4s var(--ease);
 }
+
 .ach-hero__stat:hover {
   transform: translateY(-4px);
   background: rgba(255, 255, 255, 0.16);
 }
+
 .ach-hero__stat b {
   display: block;
   font-family: var(--font-display);
@@ -110,6 +133,7 @@
   font-weight: 800;
   line-height: 1;
 }
+
 .ach-hero__stat span {
   color: rgba(255, 255, 255, 0.8);
   font-size: 0.82rem;
@@ -180,11 +204,9 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.45),
-    rgba(15, 23, 42, 0.05)
-  );
+  background: linear-gradient(to top,
+      rgba(15, 23, 42, 0.45),
+      rgba(15, 23, 42, 0.05));
 }
 
 /* ==============================
@@ -286,6 +308,7 @@
     font-size: 0.9rem;
   }
 }
+
 /* ============================== ACADEMIC TOPPERS ============================== */
 .toppers {
   background: linear-gradient(180deg, #fbfcff 0%, #fff 100%);
@@ -294,6 +317,7 @@
 .toppers__block {
   margin-bottom: 4rem;
 }
+
 .toppers__block:last-child {
   margin-bottom: 0;
 }
@@ -306,28 +330,36 @@
   margin-bottom: 1.8rem;
   flex-wrap: wrap;
 }
+
 .toppers__head h3 {
   font-size: 1.5rem;
   margin: 0;
 }
+
 .toppers__head p {
   margin: 0.4rem 0 0;
   font-size: 0.92rem;
 }
- 
 
 /* ---- Carousel viewport — native horizontal scroll, arrows call scrollBy() ---- */
 .toppers__viewport {
   overflow-x: auto;
   overflow-y: hidden;
 
-   scrollbar-width: none;
+  scrollbar-width: none;
   -ms-overflow-style: none;
   cursor: grab;
+
+  /* Native momentum scrolling on iOS Safari */
+  -webkit-overflow-scrolling: touch;
+  /* Prevent a horizontal swipe here from also scrolling the page vertically */
+  overscroll-behavior-x: contain;
 }
+
 .toppers__viewport::-webkit-scrollbar {
   display: none;
 }
+
 .toppers__viewport.dragging {
   cursor: grabbing;
   scroll-behavior: auto;
@@ -338,9 +370,9 @@
   display: flex;
   gap: 1.4rem;
   padding: 20px 0;
- 
 }
-.toppers__track > * {
+
+.toppers__track>* {
   flex: 0 0 auto;
   scroll-snap-align: start;
 }
@@ -353,6 +385,7 @@
   text-align: center;
   position: relative;
 }
+
 .topper-card__session {
   position: absolute;
   top: 0.9rem;
@@ -367,12 +400,14 @@
   padding: 0.35rem 0.75rem;
   border-radius: var(--r-pill);
 }
+
 .topper-card__media {
   position: relative;
   aspect-ratio: 1/1;
   overflow: hidden;
   background: var(--color-blue-tint);
 }
+
 .topper-card__media img {
   width: 100%;
   height: 100%;
@@ -380,6 +415,7 @@
   object-position: top;
   transition: transform 0.5s var(--ease-soft);
 }
+
 .topper-card:hover .topper-card__media img {
   transform: scale(1.08);
 }
@@ -387,10 +423,12 @@
 .topper-card__body {
   padding: 2rem 1.2rem 1.3rem;
 }
+
 .topper-card__body h4 {
   font-size: 1.02rem;
   margin-bottom: 0.35rem;
 }
+
 .topper-card__body span {
   display: inline-block;
   font-size: 0.8rem;
@@ -400,6 +438,7 @@
   padding: 0.3rem 0.8rem;
   border-radius: var(--r-pill);
 }
+
 .topper-card__body .topper-card__percent {
   position: relative;
   background: var(--grad-gold);
@@ -413,6 +452,7 @@
   white-space: nowrap;
   margin-bottom: 10px;
 }
+
 .toppers__viewall {
   text-align: center;
   margin-top: 2.2rem;
@@ -420,7 +460,11 @@
 
 @media (max-width: 560px) {
   .topper-card {
-    width: 210px;
+    width: 180px;
+  }
+
+  .topper-card__media {
+    width: 100%;
   }
 }
 
@@ -439,10 +483,12 @@
   visibility: hidden;
   transition: all 0.4s var(--ease-soft);
 }
+
 .toppers-modal.is-open {
   opacity: 1;
   visibility: visible;
 }
+
 .toppers-modal__backdrop {
   position: fixed;
   inset: 0;
@@ -456,12 +502,15 @@
   z-index: 1;
   background: #fff;
   border-radius: var(--r-lg);
-  width: 100%;
+  width: 100vw;
+  margin-top: -20px;
+
   padding: 2.4rem;
   box-shadow: var(--shadow-lg);
   transform: translateY(24px);
   transition: transform 0.45s var(--ease-soft);
 }
+
 .toppers-modal.is-open .toppers-modal__panel {
   transform: translateY(0);
 }
@@ -474,14 +523,17 @@
   margin-bottom: 1.5rem;
   flex-wrap: wrap;
 }
+
 .toppers-modal__head h3 {
   margin: 0 0 0.3rem;
   font-size: 1.4rem;
 }
+
 .toppers-modal__head p {
   margin: 0;
   font-size: 0.9rem;
 }
+
 .toppers-modal__close {
   width: 42px;
   height: 42px;
@@ -493,9 +545,11 @@
   justify-content: center;
   transition: all 0.3s var(--ease);
 }
+
 .toppers-modal__close:hover {
   background: var(--color-primary);
 }
+
 .toppers-modal__close:hover svg path {
   stroke: #fff;
 }
@@ -506,9 +560,11 @@
   flex-wrap: wrap;
   margin-bottom: 1.8rem;
 }
+
 .toppers-modal__filters.is-visible {
   display: flex;
 }
+
 .toppers-modal__filters button {
   padding: 0.55rem 1.15rem;
   border-radius: var(--r-pill);
@@ -519,6 +575,7 @@
   font-size: 0.84rem;
   transition: all 0.3s var(--ease);
 }
+
 .toppers-modal__filters button.is-active,
 .toppers-modal__filters button:hover {
   background: var(--color-primary);
@@ -537,9 +594,11 @@
   .toppers-modal {
     padding: 1.4rem 0.9rem;
   }
+
   .toppers-modal__panel {
     padding: 1.6rem;
   }
+
   .toppers-modal__grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -596,6 +655,7 @@
 .student-ach {
   background: #fff;
 }
+
 .student-ach__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -606,11 +666,13 @@
   padding: 0;
   overflow: hidden;
 }
+
 .sach-card__media {
   position: relative;
   aspect-ratio: 16/11;
   overflow: hidden;
 }
+
 .sach-card__media img {
   width: 100%;
   height: 100%;
@@ -618,9 +680,11 @@
   object-position: top;
   transition: transform 0.5s var(--ease-soft);
 }
+
 .sach-card:hover .sach-card__media img {
   transform: scale(1.08);
 }
+
 .sach-card__level {
   position: absolute;
   top: 1rem;
@@ -635,36 +699,44 @@
   border-radius: var(--r-pill);
   color: #fff;
 }
+
 .sach-card__level--national {
   background: linear-gradient(135deg, #b45309, #f59e0b);
 }
+
 .sach-card__level--state {
   background: linear-gradient(135deg, #1d4ed8, #2563eb);
 }
+
 .sach-card__body {
   padding: 1.5rem 1.6rem;
 }
+
 .sach-card__body h4 {
   font-size: 1.02rem;
   margin-bottom: 0.3rem;
 }
+
 .sach-card__meta {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 0.8rem;
 }
+
 .sach-card__meta span {
   font-size: 0.8rem;
   color: var(--color-text-soft);
   font-weight: 600;
 }
+
 .sach-card__meta .sep {
   width: 4px;
   height: 4px;
   border-radius: 50%;
   background: var(--color-border);
 }
+
 .sach-card__body p {
   font-size: 0.9rem;
   margin: 0;
@@ -675,11 +747,13 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
 @media (max-width: 620px) {
   .student-ach__grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media (max-width: 576px) {
   .student-ach__grid {
     grid-template-columns: 1fr;
@@ -696,15 +770,18 @@
   position: relative;
   overflow: hidden;
 }
+
 .ach-cta h2 {
   color: #fff;
   margin-bottom: 0.8rem;
 }
+
 .ach-cta p {
   color: rgba(255, 255, 255, 0.85);
   max-width: 520px;
   margin: 0 auto 2rem;
 }
+
 .ach-cta__actions {
   display: flex;
   justify-content: center;

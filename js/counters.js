@@ -1,5 +1,14 @@
+/**
+ * ============================================================================
+ * ANIMATED STAT COUNTERS
+ * Sant Kirpal Senior Secondary School — Website Front-End
+ * ============================================================================
+ * Animates any [data-counter] element from 0 up to its target value once
+ * it scrolls into view, using an ease-out cubic curve.
+ */
+
 /* counters.js — animates numeric stat counters when they enter the viewport */
-(function () {
+(function() {
   const counters = document.querySelectorAll('[data-counter]');
   if (!counters.length) return;
 
@@ -28,8 +37,9 @@
           obs.unobserve(entry.target);
         }
       });
-    },
-    { threshold: 0.5 }
+    }, {
+      threshold: 0.5
+    }
   );
 
   counters.forEach((c) => observer.observe(c));
