@@ -10,264 +10,312 @@
 
 /* achievements.js — renders all achievement cards from data and drives the
    topper carousels + "View All" modal (with stream filtering for Class XII). */
-(function() {
+(function () {
   /* =====================================================================
      1. DATA
   ===================================================================== */
-  const AWARDS = [{
-    year: "2025",
-    title: "Best School Excellence Award",
-    image: "sks.png",
-    desc: "Honoured for exceptional academic performance, modern teaching methods, and outstanding board examination results.",
-  }, {
-    year: "2024",
-    title: "Excellence in Science Education",
-    image: "sks.png",
-    desc: "Recognised for state-of-the-art science laboratories, innovation projects, and remarkable achievements in science competitions.",
-  }, {
-    year: "2024",
-    title: "Green Campus Recognition",
-    image: "sks.png",
-    desc: "Awarded for creating an eco-friendly campus through tree plantation, rainwater harvesting, and sustainable environmental initiatives.",
-  }, ];
+  const AWARDS = [
+    {
+      year: "2025",
+      title: "Best School Excellence Award",
+      image: "sks.png",
+      desc: "Honoured for exceptional academic performance, modern teaching methods, and outstanding board examination results.",
+    },
+    {
+      year: "2024",
+      title: "Excellence in Science Education",
+      image: "sks.png",
+      desc: "Recognised for state-of-the-art science laboratories, innovation projects, and remarkable achievements in science competitions.",
+    },
+    {
+      year: "2024",
+      title: "Green Campus Recognition",
+      image: "sks.png",
+      desc: "Awarded for creating an eco-friendly campus through tree plantation, rainwater harvesting, and sustainable environmental initiatives.",
+    },
+  ];
+
   // Class X toppers — no stream grouping
-  const TOPPERS_10 = [{
-    session: "2025–26",
-    name: "Ananya Sharma",
-    percentage: "98.4%",
-    img: "demoprofile/pfp1.jpg",
-  }, {
-    session: "2025–26",
-    name: "Rohit Meena",
-    percentage: "97.8%",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    session: "2025–26",
-    name: "Priya Gupta",
-    percentage: "97.2%",
-    img: "demoprofile/pfp3.jpg",
-  }, {
-    session: "2024–25",
-    name: "Karan Yadav",
-    percentage: "98.0%",
-    img: "demoprofile/pfp4.jpg",
-  }, {
-    session: "2024–25",
-    name: "Simran Kaur",
-    percentage: "97.6%",
-    img: "demoprofile/pfp5.jpg",
-  }, {
-    session: "2024–25",
-    name: "Aditya Rathore",
-    percentage: "96.9%",
-    img: "demoprofile/pfp6.jpg",
-  }, {
-    session: "2023–24",
-    name: "Neha Choudhary",
-    percentage: "97.4%",
-    img: "demoprofile/pfp7.jpg",
-  }, {
-    session: "2023–24",
-    name: "Vikram Singh",
-    percentage: "96.8%",
-    img: "demoprofile/pfp8.jpg",
-  }, {
-    session: "2025–26",
-    name: "Ananya Sharma",
-    percentage: "98.4%",
-    img: "demoprofile/pfp1.jpg",
-  }, {
-    session: "2025–26",
-    name: "Rohit Meena",
-    percentage: "97.8%",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    session: "2025–26",
-    name: "Priya Gupta",
-    percentage: "97.2%",
-    img: "demoprofile/pfp3.jpg",
-  }, {
-    session: "2024–25",
-    name: "Karan Yadav",
-    percentage: "98.0%",
-    img: "demoprofile/pfp4.jpg",
-  }, {
-    session: "2024–25",
-    name: "Simran Kaur",
-    percentage: "97.6%",
-    img: "demoprofile/pfp5.jpg",
-  }, {
-    session: "2024–25",
-    name: "Aditya Rathore",
-    percentage: "96.9%",
-    img: "demoprofile/pfp6.jpg",
-  }, {
-    session: "2023–24",
-    name: "Neha Choudhary",
-    percentage: "97.4%",
-    img: "demoprofile/pfp7.jpg",
-  }, {
-    session: "2023–24",
-    name: "Vikram Singh",
-    percentage: "96.8%",
-    img: "demoprofile/pfp8.jpg",
-  }, ];
+  const TOPPERS_10 = [
+    {
+      session: "2025–26",
+      name: "Ananya Sharma",
+      percentage: "98.4%",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Rohit Meena",
+      percentage: "97.8%",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Priya Gupta",
+      percentage: "97.2%",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Karan Yadav",
+      percentage: "98.0%",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Simran Kaur",
+      percentage: "97.6%",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aditya Rathore",
+      percentage: "96.9%",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Neha Choudhary",
+      percentage: "97.4%",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Vikram Singh",
+      percentage: "96.8%",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Ananya Sharma",
+      percentage: "98.4%",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Rohit Meena",
+      percentage: "97.8%",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Priya Gupta",
+      percentage: "97.2%",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Karan Yadav",
+      percentage: "98.0%",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Simran Kaur",
+      percentage: "97.6%",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aditya Rathore",
+      percentage: "96.9%",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Neha Choudhary",
+      percentage: "97.4%",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Vikram Singh",
+      percentage: "96.8%",
+      img: "demoprofile/pfp8.jpg",
+    },
+  ];
 
   // Class XII toppers — grouped by stream: Science / Commerce / Arts
-  const TOPPERS_12 = [{
-    session: "2025–26",
-    name: "Ishaan Verma",
-    percentage: "96.6%",
-    stream: "Science",
-    img: "demoprofile/pfp3.jpg",
-  }, {
-    session: "2025–26",
-    name: "Riya Agarwal",
-    percentage: "95.8%",
-    stream: "Commerce",
-    img: "demoprofile/pfp7.jpg",
-  }, {
-    session: "2025–26",
-    name: "Meera Joshi",
-    percentage: "94.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    session: "2024–25",
-    name: "Aryan Kapoor",
-    percentage: "97.1%",
-    stream: "Science",
-    img: "demoprofile/pfp8.jpg",
-  }, {
-    session: "2024–25",
-    name: "Tanya Bansal",
-    percentage: "95.4%",
-    stream: "Commerce",
-    img: "demoprofile/pfp1.jpg",
-  }, {
-    session: "2024–25",
-    name: "Devansh Rana",
-    percentage: "94.2%",
-    stream: "Arts",
-    img: "demoprofile/pfp5.jpg",
-  }, {
-    session: "2023–24",
-    name: "Kritika Solanki",
-    percentage: "96.3%",
-    stream: "Science",
-    img: "demoprofile/pfp4.jpg",
-  }, {
-    session: "2023–24",
-    name: "Nikhil Chauhan",
-    percentage: "94.7%",
-    stream: "Commerce",
-    img: "demoprofile/pfp6.jpg",
-  }, {
-    session: "2023–24",
-    name: "Sanya Malhotra",
-    percentage: "93.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    session: "2025–26",
-    name: "Ishaan Verma",
-    percentage: "96.6%",
-    stream: "Science",
-    img: "demoprofile/pfp3.jpg",
-  }, {
-    session: "2025–26",
-    name: "Riya Agarwal",
-    percentage: "95.8%",
-    stream: "Commerce",
-    img: "demoprofile/pfp7.jpg",
-  }, {
-    session: "2025–26",
-    name: "Meera Joshi",
-    percentage: "94.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    session: "2024–25",
-    name: "Aryan Kapoor",
-    percentage: "97.1%",
-    stream: "Science",
-    img: "demoprofile/pfp8.jpg",
-  }, {
-    session: "2024–25",
-    name: "Tanya Bansal",
-    percentage: "95.4%",
-    stream: "Commerce",
-    img: "demoprofile/pfp1.jpg",
-  }, {
-    session: "2024–25",
-    name: "Devansh Rana",
-    percentage: "94.2%",
-    stream: "Arts",
-    img: "demoprofile/pfp5.jpg",
-  }, {
-    session: "2023–24",
-    name: "Kritika Solanki",
-    percentage: "96.3%",
-    stream: "Science",
-    img: "demoprofile/pfp4.jpg",
-  }, {
-    session: "2023–24",
-    name: "Nikhil Chauhan",
-    percentage: "94.7%",
-    stream: "Commerce",
-    img: "demoprofile/pfp6.jpg",
-  }, {
-    session: "2023–24",
-    name: "Sanya Malhotra",
-    percentage: "93.9%",
-    stream: "Arts",
-    img: "demoprofile/pfp2.jpg",
-  }, ];
+  const TOPPERS_12 = [
+    {
+      session: "2025–26",
+      name: "Ishaan Verma",
+      percentage: "96.6%",
+      stream: "Science",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Riya Agarwal",
+      percentage: "95.8%",
+      stream: "Commerce",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Meera Joshi",
+      percentage: "94.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aryan Kapoor",
+      percentage: "97.1%",
+      stream: "Science",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Tanya Bansal",
+      percentage: "95.4%",
+      stream: "Commerce",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Devansh Rana",
+      percentage: "94.2%",
+      stream: "Arts",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Kritika Solanki",
+      percentage: "96.3%",
+      stream: "Science",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Nikhil Chauhan",
+      percentage: "94.7%",
+      stream: "Commerce",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Sanya Malhotra",
+      percentage: "93.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Ishaan Verma",
+      percentage: "96.6%",
+      stream: "Science",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Riya Agarwal",
+      percentage: "95.8%",
+      stream: "Commerce",
+      img: "demoprofile/pfp7.jpg",
+    },
+    {
+      session: "2025–26",
+      name: "Meera Joshi",
+      percentage: "94.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Aryan Kapoor",
+      percentage: "97.1%",
+      stream: "Science",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Tanya Bansal",
+      percentage: "95.4%",
+      stream: "Commerce",
+      img: "demoprofile/pfp1.jpg",
+    },
+    {
+      session: "2024–25",
+      name: "Devansh Rana",
+      percentage: "94.2%",
+      stream: "Arts",
+      img: "demoprofile/pfp5.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Kritika Solanki",
+      percentage: "96.3%",
+      stream: "Science",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Nikhil Chauhan",
+      percentage: "94.7%",
+      stream: "Commerce",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      session: "2023–24",
+      name: "Sanya Malhotra",
+      percentage: "93.9%",
+      stream: "Arts",
+      img: "demoprofile/pfp2.jpg",
+    },
+  ];
 
   // Students' own achievements outside school — national/state level
-  const STUDENT_ACHIEVEMENTS = [{
-    name: "Arjun Mehta",
-    cls: "Class X",
-    level: "National",
-    title: "National Chess Championship — Runner-Up",
-    desc: "Represented Rajasthan at the National School Chess Championship, finishing as runner-up in the under-16 category.",
-    img: "demoprofile/pfp2.jpg",
-  }, {
-    name: "Diya Patel",
-    cls: "Class XII",
-    level: "State",
-    title: "State-Level Painting Competition — Gold Medal",
-    desc: "Won gold at the Rajasthan State Art Talent Search for an original painting on environmental conservation.",
-    img: "demoprofile/pfp4.jpg",
-  }, {
-    name: "Yash Rathi",
-    cls: "Class IX",
-    level: "National",
-    title: "National Mathematics Olympiad — Top 50",
-    desc: "Ranked among the top 50 nationally in the National Mathematics Olympiad, out of over 40,000 participants.",
-    img: "demoprofile/pfp6.jpg",
-  }, {
-    name: "Anjali Soni",
-    cls: "Class XI",
-    level: "State",
-    title: "State Athletics Meet — 400m Gold",
-    desc: "Won gold in the 400m sprint at the Rajasthan State School Athletics Meet, qualifying for national trials.",
-    img: "demoprofile/pfp8.jpg",
-  }, {
-    name: "Rehan Khan",
-    cls: "Class X",
-    level: "National",
-    title: "National Robotics Challenge — Finalist",
-    desc: "Reached the national finals of a robotics and coding challenge with a self-built line-following robot.",
-    img: "demoprofile/pfp3.jpg",
-  }, {
-    name: "Pooja Nair",
-    cls: "Class XII",
-    level: "State",
-    title: "State Classical Dance Competition — Gold",
-    desc: "Awarded gold in Kathak at the Rajasthan State Inter-School Classical Dance Competition.",
-    img: "demoprofile/pfp1.jpg",
-  }, ];
+  const STUDENT_ACHIEVEMENTS = [
+    {
+      name: "Arjun Mehta",
+      cls: "Class X",
+      level: "National",
+      title: "National Chess Championship — Runner-Up",
+      desc: "Represented Rajasthan at the National School Chess Championship, finishing as runner-up in the under-16 category.",
+      img: "demoprofile/pfp2.jpg",
+    },
+    {
+      name: "Diya Patel",
+      cls: "Class XII",
+      level: "State",
+      title: "State-Level Painting Competition — Gold Medal",
+      desc: "Won gold at the Rajasthan State Art Talent Search for an original painting on environmental conservation.",
+      img: "demoprofile/pfp4.jpg",
+    },
+    {
+      name: "Yash Rathi",
+      cls: "Class IX",
+      level: "National",
+      title: "National Mathematics Olympiad — Top 50",
+      desc: "Ranked among the top 50 nationally in the National Mathematics Olympiad, out of over 40,000 participants.",
+      img: "demoprofile/pfp6.jpg",
+    },
+    {
+      name: "Anjali Soni",
+      cls: "Class XI",
+      level: "State",
+      title: "State Athletics Meet — 400m Gold",
+      desc: "Won gold in the 400m sprint at the Rajasthan State School Athletics Meet, qualifying for national trials.",
+      img: "demoprofile/pfp8.jpg",
+    },
+    {
+      name: "Rehan Khan",
+      cls: "Class X",
+      level: "National",
+      title: "National Robotics Challenge — Finalist",
+      desc: "Reached the national finals of a robotics and coding challenge with a self-built line-following robot.",
+      img: "demoprofile/pfp3.jpg",
+    },
+    {
+      name: "Pooja Nair",
+      cls: "Class XII",
+      level: "State",
+      title: "State Classical Dance Competition — Gold",
+      desc: "Awarded gold in Kathak at the Rajasthan State Inter-School Classical Dance Competition.",
+      img: "demoprofile/pfp1.jpg",
+    },
+  ];
 
   /* =====================================================================
      2. AWARDS GRID
@@ -277,17 +325,14 @@
     awardsGrid.innerHTML = AWARDS.map(
       (a, i) => `
 <article class="award-card card" data-reveal="up" style="--i:${i % 6}">
-    
     <div class="award-card__image">
         <img src="${a.image}" alt="${a.title}">
         <span class="award-card__year">${a.year}</span>
     </div>
-
     <div class="award-card__body">
         <h3>${a.title}</h3>
         <p>${a.desc}</p>
     </div>
-
 </article>
 `,
     ).join("");
@@ -302,7 +347,6 @@
       (s, i) => `
       <article class="sach-card card" data-reveal="up" style="--i:${i % 6}">
         <div class="sach-card__media">
- 
           <img src="${s.img}" alt="${s.name} — ${s.title}" loading="lazy">
         </div>
         <div class="sach-card__body">
@@ -318,17 +362,17 @@
      4. TOPPER CARD TEMPLATE
   ===================================================================== */
   function topperCard(t) {
-    const classStream = t.stream ?
-      `12th – ${t.stream}` :
-      t.classLabel || "10th";
+    const classStream = t.stream
+      ? `12th – ${t.stream}`
+      : t.classLabel || "10th";
     return `
       <article class="topper-card card">
         <span class="topper-card__session">${t.session}</span>
         <div class="topper-card__media">
           <img src="${t.img}" alt="${t.name}, ${classStream} topper, ${t.percentage}" loading="lazy">
         </div>
-        <div class="topper-card__body">          <span class="topper-card__percent">${t.percentage}</span>
-
+        <div class="topper-card__body">
+          <span class="topper-card__percent">${t.percentage}</span>
           <h4>${t.name}</h4>
           <span>${classStream}</span>
         </div>
@@ -336,9 +380,25 @@
   }
 
   /* =====================================================================
-     5. CAROUSEL SETUP (used for both 10th and 12th default views) 
-  ===================================================================== */
+     5. CAROUSEL SETUP (used for both 10th and 12th default views)
+     ---------------------------------------------------------------------
+     FIX (auto-scroll not starting on direct navigation): the animation
+     clock (`lastTime`) used to be captured BEFORE the code waited for all
+     card images to finish loading. On a fresh visit those images aren't
+     cached yet and can take a second or more to load, so by the time the
+     loop actually started, the very first frame's delta-time (`dt`) was
+     huge — which shot the track thousands of pixels off-screen in one
+     jump. The "wrap back into range" logic could only correct by one
+     loop-width per frame, so the strip looked frozen/off-screen for a
+     long time (or indefinitely) until it slowly caught back up. On a
+     reload, images are already browser-cached, so `dt` stayed tiny and it
+     looked fine — which is exactly the symptom reported.
 
+     Fix: (a) start the animation clock right when the RAF loop actually
+     begins (inside `done()`/the boot step), never before the image wait,
+     and (b) clamp `dt` defensively so no single frame — cached or not —
+     can ever move the track more than one card's width.
+  ===================================================================== */
   function setupCarousel(trackSelector, prevSelector, nextSelector, data) {
     const track = document.querySelector(trackSelector);
     if (!track) return;
@@ -359,7 +419,8 @@
     let offset = 0; // current translateX in px (negative = moved left)
     let halfWidth = 0; // width of ONE copy of the data set
     const SPEED = 40; // pixels per SECOND (try 30–80)
-    let lastTime = performance.now();
+    const MAX_DT = 1 / 30; // clamp: never advance more than ~one 30fps frame's worth
+    let lastTime = null; // set only once the loop actually starts (see boot, below)
     let paused = false;
 
     function measure() {
@@ -378,13 +439,24 @@
       track.style.transform = `translate3d(${offset}px, 0, 0)`;
     }
 
+    function wrap() {
+      // Modulo-based wrap so a single stray large offset (tab was
+      // backgrounded, a slow frame, etc.) always corrects in one step
+      // instead of needing one frame per loop-width like a plain `if`.
+      if (halfWidth <= 0) return;
+      offset = ((offset % halfWidth) + halfWidth) % halfWidth;
+      offset -= halfWidth; // keep it in the (-halfWidth, 0] range the transform expects
+    }
+
     function tick(now) {
-      const dt = (now - lastTime) / 1000; // seconds
+      if (lastTime === null) lastTime = now;
+      let dt = (now - lastTime) / 1000; // seconds
+      if (dt > MAX_DT) dt = MAX_DT; // guard against a huge first/late frame
       lastTime = now;
 
       if (!paused) {
         offset -= SPEED * dt; // move left continuously
-        if (-offset >= halfWidth) offset += halfWidth; // seamless wrap
+        wrap();
         apply();
       }
       requestAnimationFrame(tick);
@@ -393,12 +465,9 @@
     // Arrow navigation — animate a step, then let auto resume
     function stepBy(direction) {
       const step = cardStep();
-      const target = offset - direction * step;
-      // smooth transition just for this jump
       track.style.transition = "transform 400ms cubic-bezier(.22,.61,.36,1)";
-      offset = target;
-      if (-offset >= halfWidth) offset += halfWidth;
-      if (offset > 0) offset -= halfWidth;
+      offset -= direction * step;
+      wrap();
       apply();
       setTimeout(() => (track.style.transition = "none"), 420);
     }
@@ -410,9 +479,15 @@
     viewport.addEventListener("mouseenter", () => (paused = true));
     viewport.addEventListener("mouseleave", () => (paused = false));
     viewport.addEventListener("touchstart", () => (paused = true), {
-      passive: true
+      passive: true,
     });
     viewport.addEventListener("touchend", () => (paused = false));
+
+    // Pause while the tab is hidden — also prevents a large dt pileup
+    // when the tab regains focus (belt-and-braces alongside the MAX_DT clamp).
+    document.addEventListener("visibilitychange", () => {
+      paused = document.hidden ? true : paused;
+    });
 
     // Drag support (updates offset instead of scrollLeft)
     let isDown = false,
@@ -437,34 +512,45 @@
       if (!isDown) return;
       e.preventDefault();
       offset = startOffset + (e.pageX - startX);
-      if (-offset >= halfWidth) offset += halfWidth;
-      if (offset > 0) offset -= halfWidth;
+      wrap();
       apply();
     });
 
-    viewport.addEventListener("touchstart", (e) => {
-      startX = e.touches[0].pageX;
-      startOffset = offset;
-    }, {
-      passive: true
-    });
-    viewport.addEventListener("touchmove", (e) => {
-      offset = startOffset + (e.touches[0].pageX - startX);
-      if (-offset >= halfWidth) offset += halfWidth;
-      if (offset > 0) offset -= halfWidth;
-      apply();
-    }, {
-      passive: true
-    });
+    viewport.addEventListener(
+      "touchstart",
+      (e) => {
+        startX = e.touches[0].pageX;
+        startOffset = offset;
+      },
+      { passive: true },
+    );
+    viewport.addEventListener(
+      "touchmove",
+      (e) => {
+        offset = startOffset + (e.touches[0].pageX - startX);
+        wrap();
+        apply();
+      },
+      { passive: true },
+    );
 
-    // Boot
+    // ---- Boot: measure + start the animation clock only once the track's
+    // images have actually loaded, so the very first `tick()` call sees a
+    // fresh `lastTime` and a normal (tiny) dt — regardless of whether the
+    // images came from cache (reload) or the network (fresh navigation).
     window.addEventListener("resize", measure);
-    // Wait for images so widths are correct
+
     const imgs = track.querySelectorAll("img");
     let loaded = 0;
-    if (imgs.length === 0) {
+
+    function boot() {
       measure();
+      lastTime = null; // let the first tick() call set the real start time
       requestAnimationFrame(tick);
+    }
+
+    if (imgs.length === 0) {
+      boot();
     } else {
       imgs.forEach((img) => {
         if (img.complete) done();
@@ -476,25 +562,23 @@
     }
 
     function done() {
-      if (++loaded >= imgs.length) {
-        measure();
-        requestAnimationFrame(tick);
-      }
+      if (++loaded >= imgs.length) boot();
     }
   }
+
   setupCarousel(
     '[data-track="10"]',
     '[data-arrow="10-prev"]',
     '[data-arrow="10-next"]',
     TOPPERS_10,
   );
-
   setupCarousel(
     '[data-track="12"]',
     '[data-arrow="12-prev"]',
     '[data-arrow="12-next"]',
     TOPPERS_12,
   );
+
   /* =====================================================================
      6. VIEW ALL MODAL (with stream filter for Class XII)
   ===================================================================== */
@@ -521,19 +605,19 @@
       currentClass = cls;
       const isTwelfth = cls === "12";
 
-      panelTitle.textContent = isTwelfth ?
-        "Class XII Toppers — All Sessions" :
-        "Class X Toppers — All Sessions";
-      panelSub.textContent = isTwelfth ?
-        "Browse every Class XII topper, filterable by stream." :
-        "Browse every Class X topper across recent sessions.";
+      panelTitle.textContent = isTwelfth
+        ? "Class XII Toppers — All Sessions"
+        : "Class X Toppers — All Sessions";
+      panelSub.textContent = isTwelfth
+        ? "Browse every Class XII topper, filterable by stream."
+        : "Browse every Class X topper across recent sessions.";
 
       filtersWrap.classList.toggle("is-visible", isTwelfth);
       if (isTwelfth) {
         filtersWrap.innerHTML = ["All", "Science", "Commerce", "Arts"]
           .map(
             (s, i) =>
-            `<button type="button" data-filter="${s}" class="${i === 0 ? "is-active" : ""}">${s}</button>`,
+              `<button type="button" data-filter="${s}" class="${i === 0 ? "is-active" : ""}">${s}</button>`,
           )
           .join("");
       } else {
