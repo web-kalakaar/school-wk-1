@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * ADMISSION PAGE — FEES + ENQUIRY FORM
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Renders the fee-structure tabs/tables from data and handles client-side
  * validation plus the success state for the admission enquiry form.

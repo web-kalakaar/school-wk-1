@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * SCROLL REVEAL + BUTTON RIPPLE
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Reveals [data-reveal] elements as they enter the viewport via
  * IntersectionObserver, and adds a Material-style ripple effect to every

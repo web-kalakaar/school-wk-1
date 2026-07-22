@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * NAVBAR
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Sticky navbar background on scroll, mobile hamburger menu open/close,
  * and the mobile accordion submenu toggles.

@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * ACHIEVEMENTS PAGE — AWARDS, TOPPERS & STUDENT WINS
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Renders the awards grid, the Class X / XII academic toppers carousels
  * (plus their "view all" modal with stream filters), and the student
@@ -18,19 +18,19 @@
     {
       year: "2025",
       title: "Best School Excellence Award",
-      image: "sks.png",
+      image: "km.jpg",
       desc: "Honoured for exceptional academic performance, modern teaching methods, and outstanding board examination results.",
     },
     {
       year: "2024",
       title: "Excellence in Science Education",
-      image: "sks.png",
+      image: "km.jpg",
       desc: "Recognised for state-of-the-art science laboratories, innovation projects, and remarkable achievements in science competitions.",
     },
     {
       year: "2024",
       title: "Green Campus Recognition",
-      image: "sks.png",
+      image: "km.jpg",
       desc: "Awarded for creating an eco-friendly campus through tree plantation, rainwater harvesting, and sustainable environmental initiatives.",
     },
   ];

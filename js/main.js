@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * APP ENTRY POINT
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Small cross-cutting setup that runs on every page: marks the document
  * as JS-ready, injects the current year in the footer, and wires up the

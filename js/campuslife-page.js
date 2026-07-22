@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * CAMPUS LIFE PAGE — SCROLL-PINNED GALLERIES
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Builds each category gallery from data and drives the sticky,
  * scroll-pinned effect: while a section is pinned, scrolling advances the

@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * HOME — CAMPUS LIFE MARQUEE
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Duplicates each campus gallery row once so the CSS infinite-scroll
  * marquee on the homepage loops seamlessly. Home page only.

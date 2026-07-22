@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * HOME — NOTICE MARQUEE
- * Sant Kirpal Senior Secondary School — Website Front-End
+ * K.M. Public Senior Secondary School — Website Front-End
  * ============================================================================
  * Duplicates the notice/highlights card list once so the vertical
  * auto-scroll marquee loops seamlessly (pauses on hover via CSS).
