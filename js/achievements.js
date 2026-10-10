@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * ACHIEVEMENTS PAGE — AWARDS, TOPPERS & STUDENT WINS
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Renders the awards grid, the Class X / XII academic toppers carousels
  * (plus their "view all" modal with stream filters), and the student

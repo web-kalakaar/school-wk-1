@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * BACK-TO-TOP BUTTON
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Shows the back-to-top button after the user scrolls past a threshold
  * and smooth-scrolls to the top of the page on click.

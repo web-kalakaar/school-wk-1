@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * HOME — HERO SLIDER
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Auto-advancing background slide carousel for the homepage hero, with
  * clickable dot navigation. Home page only.

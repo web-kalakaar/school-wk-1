@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * PAGE LOADER
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Hides the full-screen loading splash once the page has finished loading
  * (or after a hard timeout, whichever comes first).

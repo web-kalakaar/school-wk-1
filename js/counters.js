@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * ANIMATED STAT COUNTERS
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Animates any [data-counter] element from 0 up to its target value once
  * it scrolls into view, using an ease-out cubic curve.

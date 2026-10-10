@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * HOME — CAMPUS LIFE MARQUEE
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Duplicates each campus gallery row once so the CSS infinite-scroll
  * marquee on the homepage loops seamlessly. Home page only.

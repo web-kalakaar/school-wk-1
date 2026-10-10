@@ -1,7 +1,7 @@
 /**
  * ============================================================================
  * NAVBAR
- * K.M. Public Senior Secondary School — Website Front-End
+ * BM Intercontinental School — Website Front-End
  * ============================================================================
  * Sticky navbar background on scroll, mobile hamburger menu open/close,
  * and the mobile accordion submenu toggles.
